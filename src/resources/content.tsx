@@ -50,14 +50,14 @@ const home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">S.B.A.S.S. Research</strong>{" "}
+        <strong className="ml-4">CNNs & Data Modeling</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Current Focus
         </Text>
       </Row>
     ),
-    href: "/work/sensor-based-automated-sewerage-system",
+    href: "/work/future-neural-network-project",
   },
   subline: (
     <>
