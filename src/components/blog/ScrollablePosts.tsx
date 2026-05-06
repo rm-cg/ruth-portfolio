@@ -23,26 +23,27 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
   };
 
   return (
-    <Row flex={3} position="relative" vertical="center" fillWidth>
-      {/* FIXED: The div is now just for positioning. The onClick is passed directly to the IconButton! */}
-      <div style={{ position: "absolute", left: "-16px", zIndex: 10 }}>
-        <IconButton 
-          onClick={() => scroll("left")} 
-          icon="chevronLeft" 
-          variant="secondary" 
-          size="m" 
-        />
-      </div>
+    // FIXED: We removed absolute positioning! The arrows are now locked inside the Flex row using gap="12".
+    <Row flex={3} vertical="center" fillWidth gap="12" paddingX="12">
+      
+      {/* Left Clicker Arrow */}
+      <IconButton 
+        onClick={() => scroll("left")} 
+        icon="chevronLeft" 
+        variant="secondary" 
+        size="m" 
+      />
 
       {/* Standard HTML scroll container */}
       <div
         ref={scrollRef}
         style={{
           display: "flex",
-          width: "100%",
+          flex: 1, // Takes up the exact space between the two arrows
           overflowX: "auto",
           gap: "16px",
-          padding: "0 20px 24px 20px",
+          paddingBottom: "24px",
+          paddingTop: "8px",
           scrollSnapType: "x mandatory",
           scrollbarWidth: "none", 
           msOverflowStyle: "none",
@@ -55,15 +56,14 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
         {children}
       </div>
 
-      {/* FIXED: The div is now just for positioning. The onClick is passed directly to the IconButton! */}
-      <div style={{ position: "absolute", right: "-16px", zIndex: 10 }}>
-        <IconButton 
-          onClick={() => scroll("right")} 
-          icon="chevronRight" 
-          variant="secondary" 
-          size="m" 
-        />
-      </div>
+      {/* Right Clicker Arrow */}
+      <IconButton 
+        onClick={() => scroll("right")} 
+        icon="chevronRight" 
+        variant="secondary" 
+        size="m" 
+      />
+
     </Row>
   );
 }
