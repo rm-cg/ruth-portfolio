@@ -1,4 +1,4 @@
-import { Column, Heading, Line, Media, Text, MasonryGrid } from "@once-ui-system/core";
+import { Column, Heading, Line, Media, Text, MasonryGrid, RevealFx } from "@once-ui-system/core";
 import { baseURL, blog } from "@/resources";
 import React from "react";
 import type { CSSProperties } from "react";
@@ -92,10 +92,14 @@ export default function Involvement() {
       </Column>
 
       {/* 1. GDGoC PLM SECTION */}
-      <Column id="gdgoc" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
-          Google Developer Groups on Campus - PLM
-        </Heading>
+      {/* scrollMarginTop fixes the bug where jumping hides the title behind your top navbar! */}
+      <Column id="gdgoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        {/* RevealFx adds a gorgeous float-up animation when you scroll to this section! */}
+        <RevealFx translateY="16">
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
+            Google Developer Groups on Campus - PLM
+          </Heading>
+        </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
             {gdgPhotos.map((photo) => (
@@ -116,10 +120,12 @@ export default function Involvement() {
       <Line background="neutral-alpha-medium" fillWidth marginTop="l" />
 
       {/* 2. PLM MathSoc SECTION */}
-      <Column id="mathsoc" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
-          PLM Mathematical Society
-        </Heading>
+      <Column id="mathsoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        <RevealFx translateY="16">
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
+            PLM Mathematical Society
+          </Heading>
+        </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
             {mathSocPhotos.map((photo) => (
@@ -140,10 +146,12 @@ export default function Involvement() {
       <Line background="neutral-alpha-medium" fillWidth marginTop="l" />
 
       {/* 3. CS Youth Force SECTION */}
-      <Column id="csyf" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
-          College of Science Youth Force
-        </Heading>
+      <Column id="csyf" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        <RevealFx translateY="16">
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
+            College of Science Youth Force
+          </Heading>
+        </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
             {csyfPhotos.map((photo) => (
@@ -164,10 +172,12 @@ export default function Involvement() {
       <Line background="neutral-alpha-medium" fillWidth marginTop="l" />
 
       {/* 4. PNHS Research Club SECTION */}
-      <Column id="pnhs" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
-          PNHS Research Club
-        </Heading>
+      <Column id="pnhs" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        <RevealFx translateY="16">
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
+            PNHS Research Club
+          </Heading>
+        </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
             {pnhsPhotos.map((photo) => (
