@@ -9,25 +9,25 @@ const orgs = [
   {
     id: "gdgoc",
     name: "GDGoC PLM",
-    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v12345/ADD_GDGOC_LOGO_HERE.jpg",
+    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065475/GDG_PLM_LOGO_vo7fwe.jpg",
     link: "/blog#gdgoc"
   },
   {
     id: "mathsoc",
     name: "PLM MathSoc",
-    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v12345/ADD_MATHSOC_LOGO_HERE.jpg",
+    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778067673/PLM_MATHSOC_folgel.jpg",
     link: "/blog#mathsoc"
   },
   {
     id: "csyf",
     name: "CS Youth Force",
-    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v12345/ADD_CSYF_LOGO_HERE.jpg",
+    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065469/CSYF_LOGO_nmpizw.jpg",
     link: "/blog#csyf"
   },
   {
     id: "pnhs",
     name: "PNHS Research Club",
-    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v12345/ADD_PNHS_LOGO_HERE.jpg",
+    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065479/PNHS_LOGO_pcm2tg.jpg",
     link: "/blog#pnhs"
   }
 ];
