@@ -42,7 +42,6 @@ const gdgPhotos = [
 ];
 
 const mathSocPhotos = [
-  { id: "MathSoc 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041632/retouch_2025072711323495_ibielh.jpg" },
   { id: "MathSoc 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041595/FB_IMG_1756648280828_vwt9we.jpg" },
   { id: "MathSoc 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041595/FB_IMG_1755457528239_gpqc88.jpg" },
   { id: "MathSoc 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041568/2025-04-23_15.57.45_ife72z.jpg" },
@@ -77,7 +76,6 @@ const csyfPhotos = [
 ];
 
 const pnhsPhotos = [
-  { id: "PNHS 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041652/DSC_0662_nm9mht.jpg" },
   { id: "PNHS 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041652/DSC_0662_nm9mht.jpg" },
   { id: "PNHS 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041613/received_1059427358367700_nezare.jpg" },
   { id: "PNHS 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041560/received_778665433966573_ntofwv.jpg" },
