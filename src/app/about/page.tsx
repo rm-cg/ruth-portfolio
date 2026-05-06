@@ -18,6 +18,14 @@ import OrgButtons from "@/components/about/OrgButtons";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
+// FIXED: We explicitly define the exact shape of an image so we never have to use "any"!
+interface AboutImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export async function generateMetadata() {
   return Meta.generate({
     title: about.title,
@@ -109,10 +117,8 @@ export default function About() {
                 ))}
               </Row>
             )}
-
             {/* Interactive Organizational Logo Buttons */}
             <OrgButtons />
-
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
@@ -201,11 +207,13 @@ export default function About() {
               </Row>
             )}
           </Column>
+
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               {about.intro.description}
             </Column>
           )}
+
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
@@ -227,18 +235,15 @@ export default function About() {
                     </Text>
                     <Column as="ul" gap="16">
                       {experience.achievements.map((achievement: React.ReactNode) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={String(achievement)}
-                        >
+                        <Text as="li" variant="body-default-m" key={String(achievement)}>
                           {achievement}
                         </Text>
                       ))}
                     </Column>
                     {experience.images && experience.images.length > 0 && (
                       <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image) => (
+                        {/* FIXED: We strictly cast to our custom AboutImage array instead of using any! */}
+                        {(experience.images as AboutImage[]).map((image) => (
                           <Row
                             key={image.src}
                             border="neutral-medium"
@@ -262,6 +267,7 @@ export default function About() {
               </Column>
             </>
           )}
+
           {about.studies.display && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
@@ -281,6 +287,7 @@ export default function About() {
               </Column>
             </>
           )}
+
           {about.technical.display && (
             <>
               <Heading
@@ -292,7 +299,6 @@ export default function About() {
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {/* Reverted to the perfectly working static Skills list! */}
                 {about.technical.skills.map((skill) => (
                   <Column key={skill.title} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">
@@ -312,7 +318,8 @@ export default function About() {
                     )}
                     {skill.images && skill.images.length > 0 && (
                       <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image) => (
+                        {/* FIXED: We strictly cast to our custom AboutImage array instead of using any! */}
+                        {(skill.images as AboutImage[]).map((image) => (
                           <Row
                             key={image.src}
                             border="neutral-medium"
