@@ -5,7 +5,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Ruth Margareth",
   lastName: "Guinto",
-  name: "Ruth Margareth C. Guinto",
+  name: "Ruth Margareth Guinto",
   role: "Data Analyst & Mathematics Student",
   avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
   email: "guinto36ruth@gmail.com",
@@ -51,14 +51,16 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">S.B.A.S.S. Research</strong>{" "}
+        {/* CHANGED TO HIGHLIGHT YOUR CNN PROJECT! */}
+        <strong className="ml-4">CNNs & Data Modeling</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Current Focus
         </Text>
       </Row>
     ),
-    href: "/work/sensor-based-automated-sewerage-system",
+    // ROUTES DIRECTLY TO YOUR NEW CNN MDX FILE
+    href: "/work/future-neural-network-project",
   },
   subline: (
     <>
@@ -142,7 +144,7 @@ const about: About = {
   },
   technical: {
     display: true,
-    title: "Technical & Soft Skills", // Renamed to include Soft Skills in the Side Menu!
+    title: "Technical & Soft Skills", 
     skills: [
       {
         title: "Data Analysis & Visualization",
