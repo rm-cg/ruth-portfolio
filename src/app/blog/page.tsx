@@ -25,12 +25,10 @@ const gdgPhotos = [
   { id: "GDG 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041522/received_32234488962831846_fhhjtr.png" },
   { id: "GDG 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041524/received_3258879644269110_thllh7.png" },
   { id: "GDG 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041520/received_2309882712805820_efbuvf.jpg" },
-  { id: "GDG 5", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041524/received_649509888196213_f7x5zs.jpg" },
   { id: "GDG 6", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041325/FB_IMG_1758202419391_iqwxry.jpg" },
   { id: "GDG 7", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041320/FB_IMG_1756648296489_dpim5b.jpg" },
   { id: "GDG 8", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041332/IMG_20260425_140257_918_le9vr8.jpg" },
   { id: "GDG 9", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041505/received_1116374050454040_kvc9dy.jpg" },
-  { id: "GDG 10", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041511/received_1842560433137944_upf5wa.jpg" },
   { id: "GDG 11", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041518/received_2006747543418459_vgqb43.png" },
   { id: "GDG 12", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041508/received_1335919008066613_baebxv.png" },
   { id: "GDG 13", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041651/retouch_2025090519522057_bxmxzc.jpg" },
@@ -95,7 +93,7 @@ export default function Involvement() {
 
       {/* 1. GDGoC PLM SECTION */}
       <Column id="gdgoc" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong">
+        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
           Google Developer Groups on Campus - PLM
         </Heading>
         <Column fillWidth paddingTop="l">
@@ -119,7 +117,7 @@ export default function Involvement() {
 
       {/* 2. PLM MathSoc SECTION */}
       <Column id="mathsoc" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong">
+        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
           PLM Mathematical Society
         </Heading>
         <Column fillWidth paddingTop="l">
@@ -143,7 +141,7 @@ export default function Involvement() {
 
       {/* 3. CS Youth Force SECTION */}
       <Column id="csyf" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong">
+        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
           College of Science Youth Force
         </Heading>
         <Column fillWidth paddingTop="l">
@@ -167,7 +165,7 @@ export default function Involvement() {
 
       {/* 4. PNHS Research Club SECTION */}
       <Column id="pnhs" fillWidth gap="m" paddingTop="l" horizontal="center">
-        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong">
+        <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 15px rgba(255, 255, 255, 0.5)" }}>
           PNHS Research Club
         </Heading>
         <Column fillWidth paddingTop="l">
