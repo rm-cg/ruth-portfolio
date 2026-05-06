@@ -1,4 +1,4 @@
-import { Column, Heading, Line, Media, Text, MasonryGrid, RevealFx } from "@once-ui-system/core";
+import { Column, Heading, Line, Media, Text, MasonryGrid, RevealFx, Row } from "@once-ui-system/core";
 import { baseURL, blog } from "@/resources";
 import React from "react";
 import type { CSSProperties } from "react";
@@ -68,7 +68,7 @@ const mathSocPhotos = [
 ];
 
 const csyfPhotos = [
-  { id: "CSYF 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065469/CSYF_LOGO_nmpizw.jpg" },
+  { id: "CSYF 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/2025-05-13_19.57.49_tyftbv.jpg" },
   { id: "CSYF 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/2025-05-13_19.57.49_tyftbv.jpg" },
   { id: "CSYF 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035172424_nem9xf.jpg" },
   { id: "CSYF 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035258018_vqldwc.jpg" },
@@ -96,11 +96,16 @@ export default function Involvement() {
 
       {/* 1. GDGoC PLM SECTION */}
       <Column id="gdgoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
-        {/* SCROLL ANIMATION FOR GDG */}
-        <RevealFx translateY="16">
-          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
-            Google Developer Groups on Campus - PLM
-          </Heading>
+        <RevealFx translateY="16" delay={0.2}>
+          <Row 
+            style={{ transition: "transform 0.3s ease", cursor: "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+              Google Developer Groups on Campus - PLM
+            </Heading>
+          </Row>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
@@ -123,11 +128,16 @@ export default function Involvement() {
 
       {/* 2. PLM MathSoc SECTION */}
       <Column id="mathsoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
-        {/* SCROLL ANIMATION FOR MATHSOC */}
-        <RevealFx translateY="16">
-          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
-            PLM Mathematical Society
-          </Heading>
+        <RevealFx translateY="16" delay={0.2}>
+          <Row 
+            style={{ transition: "transform 0.3s ease", cursor: "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+              PLM Mathematical Society
+            </Heading>
+          </Row>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
@@ -150,11 +160,16 @@ export default function Involvement() {
 
       {/* 3. CS Youth Force SECTION */}
       <Column id="csyf" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
-        {/* SCROLL ANIMATION FOR CSYF */}
-        <RevealFx translateY="16">
-          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
-            College of Science Youth Force
-          </Heading>
+        <RevealFx translateY="16" delay={0.2}>
+          <Row 
+            style={{ transition: "transform 0.3s ease", cursor: "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+              College of Science Youth Force
+            </Heading>
+          </Row>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
@@ -177,11 +192,16 @@ export default function Involvement() {
 
       {/* 4. PNHS Research Club SECTION */}
       <Column id="pnhs" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
-        {/* SCROLL ANIMATION FOR PNHS */}
-        <RevealFx translateY="16">
-          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
-            PNHS Research Club
-          </Heading>
+        <RevealFx translateY="16" delay={0.2}>
+          <Row 
+            style={{ transition: "transform 0.3s ease", cursor: "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+              PNHS Research Club
+            </Heading>
+          </Row>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>

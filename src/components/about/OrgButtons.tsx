@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+// FIXED: Explicitly importing just the MouseEvent type to keep the linter 100% happy!
+import type { MouseEvent } from "react";
 import { Column, Row, Text, Avatar } from "@once-ui-system/core";
+import { useRouter } from "next/navigation";
 
-// I added placeholder links for your custom logos. 
-// Just swap the "logo" link with your real Cloudinary image link later!
 const orgs = [
   {
     id: "gdgoc",
@@ -33,16 +33,43 @@ const orgs = [
 ];
 
 export default function OrgButtons() {
+  const router = useRouter();
+
+  const handleSmoothJump = (e: MouseEvent<HTMLAnchorElement>, link: string) => {
+    e.preventDefault();
+    
+    // 1. Let the browser navigate to the page normally
+    router.push(link);
+    
+    // 2. Extract the specific organization hash (e.g., "pnhs")
+    const hash = link.split("#")[1];
+    
+    // 3. Wait exactly 1 second for the Masonry photos to finish loading and expanding the page,
+    // then force the screen to smoothly scroll down to correct the layout shift!
+    setTimeout(() => {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 1000);
+  };
+
   return (
     <Row fillWidth wrap gap="16" horizontal="center" paddingTop="32">
       {orgs.map((org) => (
-        // FIXED: We now wrap the Column in a standard <a> tag so the href works perfectly!
         <a
           key={org.id}
           href={org.link}
+          onClick={(e) => handleSmoothJump(e, org.link)}
           style={{ textDecoration: "none", width: "40%" }}
         >
-          <Column horizontal="center" gap="8">
+          <Column 
+            horizontal="center" 
+            gap="8" 
+            style={{ cursor: "pointer", transition: "transform 0.2s ease" }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-6px)"; }} 
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+          >
             <Avatar src={org.logo} size="xl" />
             <Text align="center" variant="body-default-xs" onBackground="neutral-strong">
               {org.name}
