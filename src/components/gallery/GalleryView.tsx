@@ -16,6 +16,7 @@ export default function GalleryView() {
           aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "3 / 4"}
           src={image.src}
           alt={image.alt}
+          style={{ objectFit: "contain" }} // ⬅️ THIS PREVENTS THE CROPPING!
         />
       ))}
     </MasonryGrid>

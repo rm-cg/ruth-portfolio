@@ -256,17 +256,20 @@ const gallery: Gallery = {
     // =========================================================================
     // 🏆 CAREER & DATA ANALYTICS CERTIFICATES (Prioritized)
     // =========================================================================
+    
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995035/Data_Annotation_dsszq7.jpg",
+      alt: "Data Annotation for Aspiring BPO Professionals - UP Open University",
+      orientation: "horizontal",
+    },
+
     {
       // PASTE YOUR ACTUAL CLOUDINARY BASE URL OVER THE PLACEHOLDER BELOW
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995038/Data_Analytics_and_Fundamentals_mxnx12.png",
       alt: "Data Analytics Fundamentals Certificate - DataSense Analytics",
       orientation: "horizontal",
     },
-    {
-      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995035/Data_Annotation_dsszq7.jpg",
-      alt: "Data Annotation for Aspiring BPO Professionals - UP Open University",
-      orientation: "horizontal",
-    },
+
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995038/DATA_STUDY_JAM_vz2a1s.jpg",
       alt: "GDGoC Data Study Jam Certificate",
@@ -307,7 +310,7 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "hhttps://res.cloudinary.com/djq6yl8sw/image/upload/v1777995006/COA_POWER_UP_WITH_PYTHON_AND_R_ORGANIZER_gssthk.png",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995006/COA_POWER_UP_WITH_PYTHON_AND_R_ORGANIZER_gssthk.png",
       alt: "Power Up with Python and R Organizer",
       orientation: "horizontal",
     },
