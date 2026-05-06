@@ -34,12 +34,13 @@ const gdgPhotos = [
   { id: "GDG 13", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041651/retouch_2025090519522057_bxmxzc.jpg" },
   { id: "GDG 14", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041524/received_649509888196213_f7x5zs.jpg" },
   { id: "GDG 15", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041326/FB_IMG_1775986258156_bj5ree.jpg" },
-  { id: "GDG 16", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041333/Messenger_creation_E0870FC1-53C2-4084-8E30-54195D13DF70_ojjct0.jpg" },
+  { id: "GDG 16", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041525/received_818729777957055_vsslqn.jpg" },
   { id: "GDG 17", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041508/received_1660411831769665_gibvcj.webp" },
-  { id: "GDG 18", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065475/GDG_PLM_LOGO_vo7fwe.jpg" },
+  { id: "GDG 18", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041520/received_2026875441291214_st8cru.jpg" },
 ];
 
 const mathSocPhotos = [
+  { id: "MathSoc 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778067673/PLM_MATHSOC_folgel.jpg" },
   { id: "MathSoc 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041595/FB_IMG_1756648280828_vwt9we.jpg" },
   { id: "MathSoc 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041595/FB_IMG_1755457528239_gpqc88.jpg" },
   { id: "MathSoc 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041568/2025-04-23_15.57.45_ife72z.jpg" },
@@ -68,12 +69,14 @@ const mathSocPhotos = [
 
 const csyfPhotos = [
   { id: "CSYF 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/2025-05-13_19.57.49_tyftbv.jpg" },
-  { id: "CSYF 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035172424_nem9xf.jpg" },
-  { id: "CSYF 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035258018_vqldwc.jpg" },
-  { id: "CSYF 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035219403_yumdxi.jpg" },
+  { id: "CSYF 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/2025-05-13_19.57.49_tyftbv.jpg" },
+  { id: "CSYF 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035172424_nem9xf.jpg" },
+  { id: "CSYF 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035258018_vqldwc.jpg" },
+  { id: "CSYF 5", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035219403_yumdxi.jpg" },
 ];
 
 const pnhsPhotos = [
+  { id: "PNHS 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778071489/PNHS_LOGO_tue4pt.jpg" },
   { id: "PNHS 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041652/DSC_0662_nm9mht.jpg" },
   { id: "PNHS 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041613/received_1059427358367700_nezare.jpg" },
   { id: "PNHS 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041560/received_778665433966573_ntofwv.jpg" },
@@ -92,9 +95,8 @@ export default function Involvement() {
       </Column>
 
       {/* 1. GDGoC PLM SECTION */}
-      {/* scrollMarginTop fixes the bug where jumping hides the title behind your top navbar! */}
       <Column id="gdgoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
-        {/* RevealFx adds a gorgeous float-up animation when you scroll to this section! */}
+        {/* SCROLL ANIMATION FOR GDG */}
         <RevealFx translateY="16">
           <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
             Google Developer Groups on Campus - PLM
@@ -121,6 +123,7 @@ export default function Involvement() {
 
       {/* 2. PLM MathSoc SECTION */}
       <Column id="mathsoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        {/* SCROLL ANIMATION FOR MATHSOC */}
         <RevealFx translateY="16">
           <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
             PLM Mathematical Society
@@ -147,6 +150,7 @@ export default function Involvement() {
 
       {/* 3. CS Youth Force SECTION */}
       <Column id="csyf" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        {/* SCROLL ANIMATION FOR CSYF */}
         <RevealFx translateY="16">
           <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
             College of Science Youth Force
@@ -173,6 +177,7 @@ export default function Involvement() {
 
       {/* 4. PNHS Research Club SECTION */}
       <Column id="pnhs" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
+        {/* SCROLL ANIMATION FOR PNHS */}
         <RevealFx translateY="16">
           <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 20px rgba(130, 130, 130, 0.9)" }}>
             PNHS Research Club
