@@ -1,0 +1,46 @@
+---
+title: "Mastering MS Excel: Structuring Complex Data"
+summary: "Tackling data tracking challenges, avoiding mismatches, and building automated sheets using advanced formulas."
+publishedAt: "2026-05-07"
+image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778085298/structured-references-excel_wbfhbt.png"
+tag: "Project Log"
+---
+
+## Data Standardization
+
+Handling large datasets automatically generates the need for clean, structured records based on the raw information you receive. 
+
+## Error Prevention
+
+Using strict formatting automatically generates reliable tracking trails for your workflow based on the raw data files.
+
+## Advanced Formulas for Data Tracking
+
+Tracking complex records is easily automated with advanced lookup functions to prevent human error and ensure data consistency.
+
+<Feedback
+    icon
+    marginBottom="16"
+    description={<>
+        Make sure you have updated the <InlineCode>Data Validation</InlineCode> rules with your own parameters and the <InlineCode>Named Ranges</InlineCode> variable in the <InlineCode>Formulas</InlineCode> tab.
+    </>}
+/>
+
+<CodeBlock
+    marginBottom="16"
+    highlight="4"
+    codes={[
+      {
+        code:
+`=IFERROR(
+  INDEX(MasterList[Status],
+  MATCH([@ID_Number], MasterList[ID_Number], 0)),
+  "Pending"
+)`,
+        language: "plaintext",
+        label: "data_tracker.xlsx"
+      }
+    ]}
+/>
+
+The above declaration automatically checks the master database and flags mismatched IDs. You can use a static text warning by replacing the `"Pending"` value with a different string in the formula.

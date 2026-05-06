@@ -1,0 +1,70 @@
+---
+title: "Mastering LaTeX: A Game Changer for Math Students and Researchers"
+summary: "How learning LaTeX streamlined my mathematical documentation and quantitative research workflows."
+image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778085448/ccb3c6ac4603ecaaafe9d2d34229a584_e0qq9a.jpg"
+publishedAt: "2026-05-07"
+tag: "Project Log"
+---
+
+## The Math Journey
+
+As a BS Mathematics student, you quickly realize that standard word processors are incredibly inefficient for writing long proofs and complex formulas. Transitioning to LaTeX changed everything for me. It allows you to create, edit, and format mathematical documents with absolute precision simply by writing code.
+
+## Document Setup
+
+The power of LaTeX starts in the preamble. Instead of manually adjusting margins and fonts, the preamble is used to set the document's metadata and formatting rules globally. It is used to load specialized packages for math symbols, graphics, and data tables.
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+      {
+        code:
+`\\documentclass[12pt, a4paper]{article}
+\\usepackage{amsmath, amssymb}
+\\usepackage{graphicx}
+
+\\title{Quantitative Research Findings}
+\\author{Ruth Margareth Guinto}
+\\date{\\today}
+
+\\begin{document}
+\\maketitle`,
+        language: "latex",
+        label: "research_paper.tex"
+      }
+    ]}
+/>
+
+## Mathematical Syntax
+
+You can use LaTeX syntax to write the content of your research. It helps you write rich, complex formulas with minimal effort. Elements like fractions, integrals, and matrices are automatically transformed into professional, textbook-quality typography, integrating perfectly into the academic design.
+
+## Complex Environments
+
+You can use custom environments in `.tex` files to format statistical tests. For example, when I worked on the data analysis for my quantitative research, writing out One-Way ANOVA formulas was incredibly simple using the `equation` environment.
+
+<CodeBlock
+    marginBottom="16"
+    highlight="2"
+    codes={[
+      {
+        code:
+`\\begin{equation}
+    F = \\frac{MST}{MSE} = \\frac{\\text{Variance between treatments}}{\\text{Variance within treatments}}
+\\end{equation}
+
+\\begin{bmatrix}
+    x_{11} & x_{12} \\\\
+    x_{21} & x_{22}
+\\end{bmatrix}`,
+        language: "latex",
+        label: "statistical_analysis.tex"
+      }
+    ]}
+/>
+
+As you can see, the `equation` and `bmatrix` components are natively available for use when you import the `amsmath` package. You can add more complex logic by simply passing different variables to the structured objects.
+
+## Professional Output
+
+While formatting heavily relies on code, the final compilation of a LaTeX document results in a flawless, structured PDF that is highly respected in the fields of Data Science and academic research.

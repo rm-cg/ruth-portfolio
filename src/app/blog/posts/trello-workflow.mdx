@@ -1,0 +1,99 @@
+---
+title: "Optimizing Workflows: Planning and Documentation with Trello"
+summary: "How I use Trello for project management, data structuring, and tracking organizational workflows."
+publishedAt: "2026-05-07"
+image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778085546/ch1_03__1__oylmmr.png"
+tag: "Project Log"
+---
+
+## Trello Workspace Setup
+
+Efficient project management starts with a well-organized [Trello workspace](https://trello.com). I use it to structure documentation workflows, track data analysis tasks, and plan organizational events.
+
+## Board Configuration
+
+Create a dedicated board and configure your lists to track the project's lifecycle. Here is an example of how I structure task parameters and API requests for organizational transparency.
+
+<CodeBlock
+    highlight="2"
+    codes={[
+  {
+    code:
+`const trelloBoard = {
+    action: 'https://api.trello.com/1/boards?parameters',
+    lists: {
+      ...
+    }
+};`, 
+    language: "tsx",
+    label: "scripts/trello_config.js"
+  }
+]} />
+
+## Task Card Content
+
+You can efficiently modify the labels and descriptions of your tracking cards to categorize your data structuring processes.
+
+<CodeBlock
+    highlight="2"
+    codes={[
+  {
+    code:
+`const taskCard = {
+    display: true,
+    title: <>Data Analysis & Visualization Phase</>,
+    description: (
+      <>
+        Tracking the progress of descriptive statistics, correlation mapping, and trend interpretation for the research team.
+      </>
+    ),
+};`, 
+    language: "tsx",
+    label: "scripts/task_content.js"
+  }
+]} />
+
+## Workflow Automation
+
+There's a pre-configured automation setup that you can modify in the `trelloBoard` object. Set workflow elements such as triggers, actions, due dates, and configure their appearance to optimize your team's workflow efficiency.
+
+<CodeBlock
+    codeHeight={24}
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`const trelloBoard = {
+    action: 'https://api.trello.com/1/cards?parameters',
+    automation: {
+      trigger: {
+        active: true,
+        event: 'cardMoved',
+        listName: 'In Progress'
+      },
+      labels: {
+        display: true,
+        color: 'brand-on-background-weak',
+        tag: 'Data Structuring'
+      },
+      checklist: {
+        display: true,
+        items: 5,
+        status: 'pending'
+      },
+      tracking: {
+        display: false,
+        color: 'neutral-alpha-weak',
+        opacity: 100
+      },
+      dueDates: {
+        display: true,
+        color: 'accent-solid-strong',
+        reminder: '24h'
+      }
+  }
+}`, 
+    language: "tsx",
+    label: "scripts/trello_config.js"
+  }
+]} />

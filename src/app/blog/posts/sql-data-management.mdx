@@ -1,0 +1,65 @@
+---
+title: "How I Use SQL for Relational Data Management"
+summary: "A breakdown of how I use SQL for data querying, filtering, and structuring large datasets."
+image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778083977/do-database-design-and-solve-your-sql-problems_zslybn.jpg"
+publishedAt: "2026-05-07"
+tag: "Project Log"
+---
+
+## The Power of SQL in Data Analytics
+
+As a Data Analyst, my ability to efficiently extract and structure data is crucial. While I frequently use Excel for immediate tracking (like managing financial records for PLM MathSoc), **SQL (Structured Query Language)** is my go-to tool for heavy relational data management, advanced filtering, and complex querying.
+
+Here is an example of how I approach querying datasets to extract meaningful insights:
+
+<CodeBlock
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`-- Extracting top performing student records during the distance learning setup
+SELECT 
+    student_id, 
+    general_average, 
+    socioeconomic_status
+FROM 
+    academic_records
+WHERE 
+    general_average >= 90 
+    AND school_year = '2020-2021'
+ORDER BY 
+    general_average DESC;`, 
+    language: "sql",
+    label: "queries/student_performance.sql"
+  }
+]} />
+
+## Advanced Filtering and Structuring
+
+When dealing with organizational records, I rely on SQL's relational capabilities to join tables and summarize data efficiently. For example, if I were tracking the PLM MathSoc Building Blocks fundraising campaign that successfully sold 2,874 tickets, the query would look like this:
+
+<CodeBlock
+    codeHeight={24}
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`-- Joining financial tracking tables for organizational transparency
+SELECT 
+    e.event_name,
+    SUM(t.ticket_price) AS total_funds_raised,
+    COUNT(t.ticket_id) AS tickets_sold
+FROM 
+    events e
+JOIN 
+    ticket_sales t ON e.event_id = t.event_id
+WHERE 
+    e.event_name = 'Building Blocks Fundraising'
+GROUP BY 
+    e.event_name;`, 
+    language: "sql",
+    label: "queries/fundraising_tracking.sql"
+  }
+]} />
+
+This structural approach allows me to guarantee data accuracy and provide transparent, real-time insights for organizational operations.
