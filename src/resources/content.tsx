@@ -5,7 +5,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Ruth Margareth",
   lastName: "Guinto",
-  name: "Ruth Margareth Guinto",
+  name: "Ruth Margareth C. Guinto",
   role: "Data Analyst & Mathematics Student",
   avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
   email: "guinto36ruth@gmail.com",
@@ -97,6 +97,7 @@ const about: About = {
         timeframe: "2025 - Present",
         role: "Lead Secretariat, Operations Department",
         achievements: [
+          "Supervises a secretarial team in executing meticulous administrative operations, including the development of automated trackers, event scripts, end-to-end documentation (CSWs), and post-activity performance evaluations.",
           "Led the Secretariat team in managing documentation, correspondence, and record systems that support the department’s operations.",
           "Represented GDGoC at external and cross-department initiatives, including Echelon PH, engaging in tech and innovation discussions.",
         ],
@@ -141,7 +142,7 @@ const about: About = {
   },
   technical: {
     display: true,
-    title: "Technical skills",
+    title: "Technical & Soft Skills", // Renamed to include Soft Skills in the Side Menu!
     skills: [
       {
         title: "Data Analysis & Visualization",
@@ -172,15 +173,33 @@ const about: About = {
         ],
         images: [],
       },
+      {
+        title: "Communication & Collaboration",
+        description: "Adept at program coordination, multi-committee communication, and presenting complex data insights clearly in written and spoken formats.",
+        tags: [
+          { name: "Team Leadership", icon: "person" },
+          { name: "Public Speaking", icon: "microphone" },
+        ],
+        images: [],
+      },
+      {
+        title: "Research & Analytical Thinking",
+        description: "Conducting quantitative research, data-driven evaluations, identifying patterns, and applying logical modeling to solve real-world problems.",
+        tags: [
+          { name: "Critical Thinking", icon: "magnify" },
+          { name: "Strategic Planning", icon: "lightbulb" },
+        ],
+        images: [],
+      }
     ],
   },
 };
 
 const blog: Blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about data, research, and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: "Involvement",
+  title: "Organizational Involvement & Events",
+  description: `A gallery of organizational events, hostings, and community outreach by ${person.name}`,
 };
 
 const work: Work = {
