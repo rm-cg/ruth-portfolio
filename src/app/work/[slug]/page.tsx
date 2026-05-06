@@ -75,9 +75,9 @@ export default function Project({ params }: WorkProps) {
   return (
     <Column maxWidth="m" gap="l" paddingX="s" horizontal="center">
       <Row fillWidth marginBottom="s">
-        <Button href="/work" variant="tertiary" size="s" prefixIcon="chevronLeft">
-          Projects
-        </Button>
+        <Button href="/#insights" variant="tertiary" size="s" prefixIcon="chevronLeft">
+  Back to Insights
+</Button>
       </Row>
 
       <Column fillWidth gap="12">
