@@ -20,7 +20,6 @@ export default function GalleryView() {
           priority={index < 10}
           sizes="(max-width: 560px) 100vw, 50vw"
           key={image.src}
-          aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "3 / 4"}
           src={image.src}
           alt={image.alt}
           style={{ objectFit: "contain" } as CSSProperties}
