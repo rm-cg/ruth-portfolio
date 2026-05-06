@@ -66,7 +66,7 @@ export default function Home() {
       </Column>
 
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1]} />
+        <Projects range={[0]} />
       </RevealFx>
 
       {routes["/blog"] && (
