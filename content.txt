@@ -154,7 +154,8 @@ const about: About = {
       },
       {
         name: "Paranaque National High School - Main",
-        description: <>Science, Technology, Engineering, and Mathematics (STEM) Program. Graduated with High Honors (2017 - 2023).</>,
+        description: <>Science, Technology, Engineering, and Mathematics (STEM) Program.</> 
+        <>Graduated with High Honors (2017 - 2023)</>,
       },
     ],
   },
