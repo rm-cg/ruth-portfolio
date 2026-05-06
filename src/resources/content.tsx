@@ -5,7 +5,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Ruth Margareth",
   lastName: "Guinto",
-  name: "Ruth Margareth C. Guinto",
+  name: "Ruth Margareth Guinto",
   role: "Data Analyst & Mathematics Student",
   avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
   email: "guinto36ruth@gmail.com",
@@ -86,7 +86,7 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: "Ruth Margareth is a Mathematics student at PLM pursuing a career in Data Analysis. She specializes in data profiling and cleaning, leveraging logical rigor to transform complex datasets into structured, reliable information.",
+    description: "Ruth Margareth is a Mathematics student at PLM pursuing a career in Data Analysis. She specializes in data profiling and cleaning, leveraging logical rigor to transform complex datasets into structured, reliable information. Her core academic and career interests include Social Impact Analytics, Data Visualization, Quantitative Research, and Mathematical Modeling.",
   },
   work: {
     display: true,
@@ -105,11 +105,12 @@ const about: About = {
       {
         company: "PLM Mathematical Society",
         timeframe: "2024 - 2025",
-        role: "Deputy Secretary & Associate for Program Coordination",
+        role: "Deputy Secretary for Auditing & Strategic Partnerships, and Associate for Program Coordination",
         achievements: [
-          "Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.",
-          "Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.",
-          "Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.",
+          "Structured and categorized 10+ financial and documentation records using Excel, including MoMs, NoMs, certificates, and budget sheets; optimized document traceability and accuracy for inventory and audit tracking.",
+          "Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 funds; assisted in post-event partner follow-ups and ensured fulfillment of sponsorship packages.",
+          "Led program flow and segment pacing for over four departmental events with 300+ attendees, including a research colloquium, career forum, programming webinar, and department-led seminars.",
+          "Coordinated real-time transitions and audience movement across six academic and outreach initiatives, including a university-wide mathematics competition and an instructional event for early learners."
         ],
         images: [],
       },
