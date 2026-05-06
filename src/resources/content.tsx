@@ -136,9 +136,14 @@ const about: About = {
         name: "Pamantasan ng Lungsod ng Maynila",
         description: "Bachelor of Science in Mathematics, Minor in Computer Science (2023 - Present).",
       },
-      {
+ {
         name: "Paranaque National High School - Main",
-        description: "Science, Technology, Engineering, and Mathematics (STEM) Program. Graduated with High Honors (2017 - 2023).",
+        description: (
+          <>
+            Science, Technology, Engineering, and Mathematics (STEM) Program. <br /> 
+            Graduated with High Honors (2017 - 2023).
+          </>
+        ),
       },
     ],
   },
