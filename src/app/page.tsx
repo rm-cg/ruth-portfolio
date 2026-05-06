@@ -30,7 +30,7 @@ export default function Home() {
         author={{ name: person.name, url: `${baseURL}${about.path}`, image: `${baseURL}${person.avatar}` }}
       />
 
-      <Column id="insights" fillWidth horizontal="center" gap="m">
+      <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">
           {home.featured.display && (
             <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="32" paddingLeft="12">
@@ -61,11 +61,11 @@ export default function Home() {
 
       <RevealFx translateY="16" delay={0.6}>
         {/* THIS NOW PROPERLY LOADS ALL 3 OF YOUR PROJECTS */}
-        <Projects range={[1, 2]} />
+        <Projects range={[1, 3]} />
       </RevealFx>
 
       {routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
+        <Column id="insights" fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64"> <Line maxWidth={48} /> </Row>
           <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
             <Row flex={1} paddingLeft="l" paddingTop="24">
@@ -74,7 +74,8 @@ export default function Home() {
               </Heading>
             </Row>
             <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
+              {/* FIXED: Now loads up to 8 blogs so all 7 of yours fit perfectly! */}
+              <Posts range={[1, 2]} columns="2" thumbnail direction="column" />
             </Row>
           </Row>
           <Row fillWidth paddingLeft="64" horizontal="end"> <Line maxWidth={48} /> </Row>
