@@ -47,19 +47,18 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Applying mathematical thinking to data and problem-solving</>,
-  featured: {
+ featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">S.B.A.S.S. Research</strong>{" "}
+        <strong className="ml-4">CNNs & Data Modeling</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Current Focus
         </Text>
       </Row>
     ),
-    // FIXED: This now perfectly matches your 'sbass-project.mdx' file name!
-    href: "/work/sbass-project",
+    href: "/work/future-neural-network-project",
   },
   subline: (
     <>
