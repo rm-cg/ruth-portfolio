@@ -180,7 +180,7 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Involvements",
-  title: "Organzation & Community",
+  title: "Organizations & Community",
   description: `Read what ${person.name} has been up to recently`,
 };
 
