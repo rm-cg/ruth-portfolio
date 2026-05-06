@@ -258,37 +258,37 @@ const gallery: Gallery = {
     // =========================================================================
     {
       // PASTE YOUR ACTUAL CLOUDINARY BASE URL OVER THE PLACEHOLDER BELOW
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Data Analytics and Fundamentals.png",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995038/Data_Analytics_and_Fundamentals_mxnx12.png",
       alt: "Data Analytics Fundamentals Certificate - DataSense Analytics",
       orientation: "horizontal",
     },
     {
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Data Annotation.jpg",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995035/Data_Annotation_dsszq7.jpg",
       alt: "Data Annotation for Aspiring BPO Professionals - UP Open University",
       orientation: "horizontal",
     },
     {
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/DATA STUDY JAM.jpg",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995038/DATA_STUDY_JAM_vz2a1s.jpg",
       alt: "GDGoC Data Study Jam Certificate",
       orientation: "horizontal",
     },
     {
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Online Information Session on Data Science and Analytics.png",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995041/Online_Information_Session_on_Data_Science_and_Analytics_ffsjfb.png",
       alt: "Data Science and Analytics Information Session - DICT",
       orientation: "horizontal",
     },
     {
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Cloud And Virtualization And Data Management.png",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995032/Cloud_And_Virtualization_And_Data_Management_znxe22.png",
       alt: "Cloud, Virtualization, and Data Management - DTI",
       orientation: "horizontal",
     },
     {
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Automation.jpg",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995026/Automation_krleei.jpg",
       alt: "Automate Your Life Webinar",
       orientation: "horizontal",
     },
     {
-      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/RRD CAMPUS TO CORPORATE.jpg",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995041/RRD_CAMPUS_TO_CORPORATE_oxrb2w.jpg",
       alt: "Campus to Corporate Training - RR Donnelley",
       orientation: "horizontal",
     },
