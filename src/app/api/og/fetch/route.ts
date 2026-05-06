@@ -17,9 +17,10 @@ function decodeHTMLEntities(text: string): string {
     };
     
     if (entity.startsWith('#')) {
+      // FIXED: Added 'Number.' in front of parseInt to satisfy the strict linter!
       const code = entity.startsWith('#x') ? 
-        parseInt(entity.slice(2), 16) : 
-        parseInt(entity.slice(1), 10);
+        Number.parseInt(entity.slice(2), 16) : 
+        Number.parseInt(entity.slice(1), 10);
       return String.fromCharCode(code);
     }
     

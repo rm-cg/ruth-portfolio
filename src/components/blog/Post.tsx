@@ -4,8 +4,19 @@ import { Card, Column, Media, Row, Avatar, Text } from "@once-ui-system/core";
 import { formatDate } from "@/utils/formatDate";
 import { person } from "@/resources";
 
+// 1. Strict TypeScript definition to remove the "any" error
+interface PostType {
+  slug: string;
+  metadata: {
+    title: string;
+    publishedAt: string;
+    image?: string;
+    tag?: string;
+  };
+}
+
 interface PostProps {
-  post: any;
+  post: PostType;
   thumbnail: boolean;
   direction?: "row" | "column";
 }
@@ -33,7 +44,8 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
           cursor="interactive"
           radius="l"
           src={post.metadata.image}
-          alt={"Thumbnail of " + post.metadata.title}
+          // 2. Fixed the string concatenation to use template literals (backticks)!
+          alt={`Thumbnail of ${post.metadata.title}`}
           aspectRatio="16 / 9"
         />
       )}
