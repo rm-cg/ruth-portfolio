@@ -97,7 +97,7 @@ export default function Involvement() {
           Google Developer Groups on Campus - PLM
         </Heading>
         <Column fillWidth paddingTop="l">
-          <MasonryGrid columns={4} s={{ columns: 2 }}>
+          <MasonryGrid columns={3} s={{ columns: 2 }}>
             {gdgPhotos.map((photo) => (
               <Column key={photo.id} border="neutral-medium" background="neutral-alpha-weak" padding="4" radius="m">
                 {photo.src ? (
@@ -121,7 +121,7 @@ export default function Involvement() {
           PLM Mathematical Society
         </Heading>
         <Column fillWidth paddingTop="l">
-          <MasonryGrid columns={4} s={{ columns: 2 }}>
+          <MasonryGrid columns={3} s={{ columns: 2 }}>
             {mathSocPhotos.map((photo) => (
               <Column key={photo.id} border="neutral-medium" background="neutral-alpha-weak" padding="4" radius="m">
                 {photo.src ? (
@@ -145,7 +145,7 @@ export default function Involvement() {
           College of Science Youth Force
         </Heading>
         <Column fillWidth paddingTop="l">
-          <MasonryGrid columns={4} s={{ columns: 2 }}>
+          <MasonryGrid columns={3} s={{ columns: 2 }}>
             {csyfPhotos.map((photo) => (
               <Column key={photo.id} border="neutral-medium" background="neutral-alpha-weak" padding="4" radius="m">
                 {photo.src ? (
@@ -169,7 +169,7 @@ export default function Involvement() {
           PNHS Research Club
         </Heading>
         <Column fillWidth paddingTop="l">
-          <MasonryGrid columns={4} s={{ columns: 2 }}>
+          <MasonryGrid columns={3} s={{ columns: 2 }}>
             {pnhsPhotos.map((photo) => (
               <Column key={photo.id} border="neutral-medium" background="neutral-alpha-weak" padding="4" radius="m">
                 {photo.src ? (
