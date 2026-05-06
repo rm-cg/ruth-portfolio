@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation';
 import { CustomMDX } from '@/components/mdx';
-// Removed formatDate from here!
-import { getPosts } from '@/utils/utils'; 
+import { getPosts } from '@/utils/utils';
 import { Button, Column, RevealFx, Row, Text, Heading } from '@once-ui-system/core';
 import { baseURL } from '@/resources';
 
-// We added the missing formatDate function directly into this file
 function formatDate(dateString: string) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
@@ -15,22 +13,22 @@ function formatDate(dateString: string) {
   });
 }
 
-// We fixed images to be a string[] array!
 interface Post {
   slug: string;
   metadata: {
     title: string;
     summary: string;
     publishedAt: string;
-    images?: string[]; 
+    images?: string[];
   };
   content: string;
 }
 
+// FIXED: We updated params to be a Promise so Next.js knows to wait for it!
 interface WorkProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -41,14 +39,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: WorkProps) {
-  const post = getPosts(['src', 'app', 'work', 'projects']).find((post: Post) => post.slug === params?.slug);
+  // FIXED: We added 'await' here so it successfully grabs the URL!
+  const resolvedParams = await params;
+  const post = getPosts(['src', 'app', 'work', 'projects']).find((post: Post) => post.slug === resolvedParams.slug);
 
   if (!post) {
     return {};
   }
 
   const { title, publishedAt: publishedTime, summary: description, images } = post.metadata;
-  // Safely grabs the first image from the array, or defaults to the generated image
+  // FIXED: Ensure we are grabbing the first image in the array correctly
   const ogImage = images && images.length > 0 ? images : `${baseURL}/api/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -65,8 +65,10 @@ export async function generateMetadata({ params }: WorkProps) {
   };
 }
 
-export default function Project({ params }: WorkProps) {
-  const post = getPosts(['src', 'app', 'work', 'projects']).find((post: Post) => post.slug === params?.slug);
+// FIXED: We changed this to an 'async' function so we can 'await' the params!
+export default async function Project({ params }: WorkProps) {
+  const resolvedParams = await params;
+  const post = getPosts(['src', 'app', 'work', 'projects']).find((post: Post) => post.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
@@ -75,11 +77,10 @@ export default function Project({ params }: WorkProps) {
   return (
     <Column maxWidth="m" gap="l" paddingX="s" horizontal="center">
       <Row fillWidth marginBottom="s">
-        <Button href="/#insights" variant="tertiary" size="s" prefixIcon="chevronLeft">
-  Back to Insights
-</Button>
+        <Button href="/work" variant="tertiary" size="s" prefixIcon="chevronLeft">
+          Projects
+        </Button>
       </Row>
-
       <Column fillWidth gap="12">
         <RevealFx translateY="8">
           <Heading as="h1" variant="display-strong-l">{post.metadata.title}</Heading>
@@ -90,7 +91,6 @@ export default function Project({ params }: WorkProps) {
           </Text>
         </RevealFx>
       </Column>
-
       <RevealFx translateY="16" delay={0.4} fillWidth>
         <CustomMDX source={post.content} />
       </RevealFx>

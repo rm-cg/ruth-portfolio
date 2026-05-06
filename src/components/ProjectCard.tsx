@@ -10,18 +10,20 @@ import {
   Text,
 } from "@once-ui-system/core";
 
+// FIXED: Added "?" to make these officially optional, satisfying the strict linter!
 interface ProjectCardProps {
   href: string;
-  priority?: boolean;
-  images: string[];
   title: string;
-  content: string;
-  description: string;
-  avatars: { src: string }[];
-  link: string;
+  priority?: boolean;
+  images?: string[];
+  content?: string;
+  description?: string;
+  avatars?: { src: string }[];
+  link?: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+// FIXED: Removed React.FC to bypass the missing import error!
+export const ProjectCard = ({
   href,
   images = [],
   title,
@@ -29,7 +31,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
-}) => {
+}: ProjectCardProps) => {
+  
+  // FIXED: Safely checking our optional data up here prevents TypeScript 
+  // from complaining and prevents the infamous React "0" rendering bug!
+  const hasAvatars = avatars && avatars.length > 0;
+  const hasDescription = description && description.trim().length > 0;
+  const hasContent = content && content.trim().length > 0;
+
   return (
     <Column fillWidth gap="m">
       <Carousel
@@ -54,16 +63,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Heading>
           </Flex>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+        {(hasAvatars || hasDescription || hasContent) && (
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
+            {hasAvatars && <AvatarGroup avatars={avatars} size="m" reverse />}
+            {hasDescription && (
               <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
                 {description}
               </Text>
             )}
             <Flex gap="24" wrap>
-              {content?.trim() && (
+              {hasContent && (
                 <SmartLink
                   suffixIcon="arrowRight"
                   style={{ margin: "0", width: "fit-content" }}
