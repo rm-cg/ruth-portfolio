@@ -1,4 +1,4 @@
-import { Column, Heading, Line, Media, Text, MasonryGrid, RevealFx, Row } from "@once-ui-system/core";
+import { Column, Heading, Line, Media, Text, MasonryGrid, RevealFx } from "@once-ui-system/core";
 import { baseURL, blog } from "@/resources";
 import React from "react";
 import type { CSSProperties } from "react";
@@ -97,15 +97,9 @@ export default function Involvement() {
       {/* 1. GDGoC PLM SECTION */}
       <Column id="gdgoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
         <RevealFx translateY="16" delay={0.2}>
-          <Row 
-            style={{ transition: "transform 0.3s ease", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
-          >
-            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
-              Google Developer Groups on Campus - PLM
-            </Heading>
-          </Row>
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+            Google Developer Groups on Campus - PLM
+          </Heading>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
@@ -129,15 +123,9 @@ export default function Involvement() {
       {/* 2. PLM MathSoc SECTION */}
       <Column id="mathsoc" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
         <RevealFx translateY="16" delay={0.2}>
-          <Row 
-            style={{ transition: "transform 0.3s ease", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
-          >
-            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
-              PLM Mathematical Society
-            </Heading>
-          </Row>
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+            PLM Mathematical Society
+          </Heading>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
@@ -161,15 +149,9 @@ export default function Involvement() {
       {/* 3. CS Youth Force SECTION */}
       <Column id="csyf" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
         <RevealFx translateY="16" delay={0.2}>
-          <Row 
-            style={{ transition: "transform 0.3s ease", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
-          >
-            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
-              College of Science Youth Force
-            </Heading>
-          </Row>
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+            College of Science Youth Force
+          </Heading>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
@@ -193,15 +175,9 @@ export default function Involvement() {
       {/* 4. PNHS Research Club SECTION */}
       <Column id="pnhs" fillWidth gap="m" paddingTop="l" horizontal="center" style={{ scrollMarginTop: "120px" }}>
         <RevealFx translateY="16" delay={0.2}>
-          <Row 
-            style={{ transition: "transform 0.3s ease", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-8px)"; }} 
-            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
-          >
-            <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
-              PNHS Research Club
-            </Heading>
-          </Row>
+          <Heading as="h2" variant="display-strong-m" align="center" onBackground="neutral-strong" style={{ textShadow: "0px 0px 25px rgba(255, 255, 255, 0.6)" }}>
+            PNHS Research Club
+          </Heading>
         </RevealFx>
         <Column fillWidth paddingTop="l">
           <MasonryGrid columns={3} s={{ columns: 2 }}>
