@@ -68,7 +68,7 @@ const mathSocPhotos = [
 ];
 
 const csyfPhotos = [
-  { id: "CSYF 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/2025-05-13_19.57.49_tyftbv.jpg" },
+  { id: "CSYF 1", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065469/CSYF_LOGO_nmpizw.jpg" },
   { id: "CSYF 2", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/2025-05-13_19.57.49_tyftbv.jpg" },
   { id: "CSYF 3", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035172424_nem9xf.jpg" },
   { id: "CSYF 4", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041315/FB_IMG_1778035258018_vqldwc.jpg" },
