@@ -14,7 +14,7 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 320; // Scrolls exactly one card width
+      const scrollAmount = 320; 
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -23,46 +23,47 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
   };
 
   return (
-    // FIXED: We removed absolute positioning! The arrows are now locked inside the Flex row using gap="12".
-    <Row flex={3} vertical="center" fillWidth gap="12" paddingX="12">
+    <Row flex={3} position="relative" vertical="center" fillWidth>
       
-      {/* Left Clicker Arrow */}
-      <IconButton 
-        onClick={() => scroll("left")} 
-        icon="chevronLeft" 
-        variant="secondary" 
-        size="m" 
-      />
+      {/* GUARANTEED VISIBLE LEFT ARROW: Floating over the cards */}
+      <div style={{ position: "absolute", left: "8px", zIndex: 999 }}>
+        <IconButton 
+          onClick={() => scroll("left")} 
+          icon="chevronLeft" 
+          variant="secondary" 
+          size="l" 
+        />
+      </div>
 
-      {/* Standard HTML scroll container */}
       <div
         ref={scrollRef}
         style={{
           display: "flex",
-          flex: 1, // Takes up the exact space between the two arrows
+          width: "100%",
           overflowX: "auto",
           gap: "16px",
-          paddingBottom: "24px",
-          paddingTop: "8px",
+          // Added 48px padding to the sides so cards don't hide under the arrows
+          padding: "16px 48px 24px 48px", 
           scrollSnapType: "x mandatory",
           scrollbarWidth: "none", 
           msOverflowStyle: "none",
         }}
       >
-        {/* CSS to physically hide the ugly bottom scrollbar */}
         <style>{`
           div::-webkit-scrollbar { display: none; }
         `}</style>
         {children}
       </div>
 
-      {/* Right Clicker Arrow */}
-      <IconButton 
-        onClick={() => scroll("right")} 
-        icon="chevronRight" 
-        variant="secondary" 
-        size="m" 
-      />
+      {/* GUARANTEED VISIBLE RIGHT ARROW: Floating over the cards */}
+      <div style={{ position: "absolute", right: "8px", zIndex: 999 }}>
+        <IconButton 
+          onClick={() => scroll("right")} 
+          icon="chevronRight" 
+          variant="secondary" 
+          size="l" 
+        />
+      </div>
 
     </Row>
   );
