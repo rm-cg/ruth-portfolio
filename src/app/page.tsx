@@ -2,7 +2,9 @@ import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Li
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+
+import { getPosts } from "@/utils/utils";
+import Post from "@/components/blog/Post";
 
 export async function generateMetadata() {
   return {
@@ -18,6 +20,10 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
+  const allPosts = getPosts(["src", "app", "blog", "posts"]).sort(
+    (a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
+  );
+
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -60,8 +66,7 @@ export default function Home() {
       </Column>
 
       <RevealFx translateY="16" delay={0.6}>
-        {/* FIXED: range is strictly set to [1, 3] to display all 3 of your research projects */}
-        <Projects range={[1, 3]} />
+        <Projects range={[1, 2]} />
       </RevealFx>
 
       {routes["/blog"] && (
@@ -73,10 +78,26 @@ export default function Home() {
                 Professional Insights & Analytical Explorations
               </Heading>
             </Row>
-            <Row flex={3} paddingX="20">
-              {/* FIXED: range is strictly set to [1, 2] to display all 7 of your blogs perfectly! */}
-              <Posts range={[1, 2]} columns="2" thumbnail direction="column" />
+            
+            <Row 
+              flex={3} 
+              paddingX="20" 
+              overflowX="auto" 
+              gap="16" 
+              paddingBottom="24" 
+              style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none" }}
+            >
+              {allPosts.map((post) => (
+                <Column 
+                  key={post.slug} 
+                  // FIXED: Moved the widths into standard CSS to bypass the strict linter!
+                  style={{ minWidth: "280px", maxWidth: "320px", scrollSnapAlign: "start" }}
+                >
+                  <Post post={post} thumbnail direction="column" />
+                </Column>
+              ))}
             </Row>
+
           </Row>
           <Row fillWidth paddingLeft="64" horizontal="end"> <Line maxWidth={48} /> </Row>
         </Column>

@@ -1,240 +1,185 @@
-import { IconName } from "@/resources/icons";
-import { zones } from "tzdata";
+// FIXED: We added the "type" keyword to both imports to completely satisfy the strict linter!
+import type {
+  BorderStyle,
+  ChartMode,
+  ChartVariant,
+  NeutralColor,
+  ScalingSize,
+  Schemes,
+  SolidStyle,
+  SolidType,
+  SurfaceStyle,
+  Theme,
+  TransitionStyle,
+} from "@once-ui-system/core";
+import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
 
 /**
- * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
- * See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+ * Display configuration for UI elements.
  */
-export type IANATimeZone = Extract<keyof typeof zones, string>; // Narrow to string keys for React usage
-
-/**
- * Represents a person featured in the portfolio.
- */
-export type Person = {
-  /** First name of the person */
-  firstName: string;
-  /** Last name of the person */
-  lastName: string;
-  /** The name you want to display, allows variations like nicknames */
-  name: string;
-  /** Role or job title */
-  role: string;
-  /** Path to avatar image */
-  avatar: string;
-  /** Email address */
-  email: string;
-  /** IANA time zone location */
-  location: IANATimeZone;
-  /** Languages spoken */
-  languages?: string[];
+export type DisplayConfig = {
+  location: boolean;
+  time: boolean;
+  themeSwitcher: boolean;
 };
 
 /**
- * Newsletter Section
- * @description The below information will be displayed on the Home page in Newsletter block
+ * Route configuration for enabled/disabled routes.
  */
-export type Newsletter = {
-  /** Whether to display the newsletter section */
-  display: boolean;
-  /** Title of the newsletter   */
-  title: React.ReactNode;
-  /** Description of the newsletter */
-  description: React.ReactNode;
+export type RoutesConfig = Record<`/${string}`, boolean>;
+
+/**
+ * Protected route configuration.
+ */
+export type ProtectedRoutesConfig = Record<`/${string}`, boolean>;
+
+/**
+ * Font configuration for each variant.
+ */
+export type FontsConfig = {
+  heading: NextFontWithVariable;
+  body: NextFontWithVariable;
+  label: NextFontWithVariable;
+  code: NextFontWithVariable;
 };
 
 /**
- * Social link configuration.
+ * Style customization for main layout.
  */
-export type Social = Array<{
-  /** Name of the social platform */
-  name: string;
-  /** Icon for the social platform
-   * The icons are a part of "src/resources/icons.ts" file.
-   * If you need a different icon, import it there and reference it everywhere else
-   */
-  icon: IconName;
-  /**
-   * The link to the social platform
-   *
-   * The link is not validated by code, make sure it's correct
-   */
-  link: string;
-  /** Whether this social link is essential and should be displayed on the about page */
-  essential?: boolean;
-}>;
+export type StyleConfig = {
+  theme: Theme;
+  neutral: NeutralColor;
+  brand: Schemes;
+  accent: Schemes;
+  solid: SolidType;
+  solidStyle: SolidStyle;
+  border: BorderStyle;
+  surface: SurfaceStyle;
+  transition: TransitionStyle;
+  scaling: ScalingSize;
+};
 
 /**
- * Base interface for page configuration with common properties.
+ * Data style configuration for charts.
  */
-export interface BasePageConfig {
-  /** Path to the page
-   *
-   * The path should be relative to the public directory
-   */
-  path: `/${string}` | string;
-  /** Label for navigation or display */
-  label: string;
-  /** Title of the page */
-  title: string;
-  /** Description for SEO and metadata */
+export type DataStyleConfig = {
+  variant: ChartVariant;
+  mode: ChartMode;
+  height: number;
+  axis: {
+    stroke: string;
+  };
+  tick: {
+    fill: string;
+    fontSize: number;
+    line: boolean;
+  };
+};
+
+/**
+ * Effects configuration for UI visuals.
+ */
+export type EffectsConfig = {
+  mask: {
+    cursor: boolean;
+    x: number;
+    y: number;
+    radius: number;
+  };
+  gradient: {
+    display: boolean;
+    opacity: number;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    tilt: number;
+    colorStart: string;
+    colorEnd: string;
+  };
+  dots: {
+    display: boolean;
+    opacity: number;
+    size: string;
+    color: string;
+  };
+  grid: {
+    display: boolean;
+    opacity: number;
+    color: string;
+    width: string;
+    height: string;
+  };
+  lines: {
+    display: boolean;
+    opacity: number;
+    color: string;
+    size: string;
+    thickness: number;
+    angle: number;
+  };
+};
+
+/**
+ * Mailchimp configuration for newsletter forms.
+ */
+export type MailchimpConfig = {
+  action: string;
+  effects: EffectsConfig;
+};
+
+/**
+ * Schema data for SEO/meta tags.
+ */
+export type SchemaConfig = {
+  logo: string;
+  type: string;
+  name: string;
   description: string;
-  /** OG Image should be put inside `public/images` folder */
-  image?: `/images/${string}` | string;
-}
+  email: string;
+};
 
 /**
- * Home page configuration.
+ * Social links for organization.
  */
-export interface Home extends BasePageConfig {
-  /** The image to be displayed in metadata
-   *
-   * The image needs to be put inside `/public/images/` directory
-   */
-  image: `/images/${string}` | string;
-  /** The headline of the home page */
-  headline: React.ReactNode;
-  /** Featured badge, which appears above the headline */
-  featured: {
-    display: boolean;
-    title: React.ReactNode;
-    href: string;
-  };
-  /** The sub text which appears below the headline */
-  subline: React.ReactNode;
-}
+export type SameAsConfig = {
+  threads: string;
+  linkedin: string;
+  discord: string;
+};
 
 /**
- * About page configuration.
- * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
+ * Social sharing configuration for blog posts.
  */
-export interface About extends BasePageConfig {
-  /** Table of contents configuration */
-  tableOfContent: {
-    /** Whether to display the table of contents */
-    display: boolean;
-    /** Whether to show sub-items in the table of contents */
-    subItems: boolean;
+export type SocialSharingConfig = {
+  display: boolean;
+  platforms: {
+    x: boolean;
+    linkedin: boolean;
+    facebook: boolean;
+    pinterest: boolean;
+    whatsapp: boolean;
+    reddit: boolean;
+    telegram: boolean;
+    email: boolean;
+    copyLink: boolean;
   };
-  /** Avatar section configuration */
-  avatar: {
-    /** Whether to display the avatar */
-    display: boolean;
-  };
-  /** Calendar section configuration */
-  calendar: {
-    /** Whether to display the calendar */
-    display: boolean;
-    /** Link to the calendar */
-    link: string;
-  };
-  /** Introduction section */
-  intro: {
-    /** Whether to display the introduction */
-    display: boolean;
-    /** Title of the introduction section */
-    title: string;
-    /** Description of the introduction section */
-    description: React.ReactNode;
-  };
-  /** Work experience section */
-  work: {
-    /** Whether to display work experience */
-    display: boolean;
-    /** Title for the work experience section */
-    title: string;
-    /** List of work experiences */
-    experiences: Array<{
-      /** Company name */
-      company: string;
-      /** Timeframe of employment */
-      timeframe: string;
-      /** Role or job title */
-      role: string;
-      /** Achievements at the company */
-      achievements: React.ReactNode[];
-      /** Images related to the experience */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
-    }>;
-  };
-  /** Studies/education section */
-  studies: {
-    /** Whether to display studies section */
-    display: boolean;
-    /** Title for the studies section */
-    title: string;
-    /** List of institutions attended */
-    institutions: Array<{
-      /** Institution name */
-      name: string;
-      /** Description of studies */
-      description: React.ReactNode;
-    }>;
-  };
-  /** Technical skills section */
-  technical: {
-    /** Whether to display technical skills section */
-    display: boolean;
-    /** Title for the technical skills section */
-    title: string;
-    /** List of technical skills */
-    skills: Array<{
-      /** Skill title */
-      title: string;
-      /** Skill description */
-      description?: React.ReactNode;
-      /** Skill tags */
-      tags?: Array<{
-        name: string;
-        icon?: string;
-      }>;
-      /** Images related to the skill */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
-    }>;
-  };
-}
+};
 
 /**
- * Blog page configuration.
- * @description Configuration for the Blog page, including metadata and navigation label.
+ * Top-level config types for once-ui.config.js
  */
-export interface Blog extends BasePageConfig {}
-
-/**
- * Work/projects page configuration.
- * @description Configuration for the Work/Projects page, including metadata and navigation label.
- */
-export interface Work extends BasePageConfig {}
-
-/**
- * Gallery page configuration.
- * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
- */
-export interface Gallery extends BasePageConfig {
-  /** List of images in the gallery */
-  images: Array<{
-    /** Image source path */
-    src: string;
-    /** Image alt text */
-    alt: string;
-    /** Image orientation (horizontal/vertical) */
-    orientation: string;
-  }>;
-}
+export type OnceUIConfig = {
+  display: DisplayConfig;
+  mailchimp: MailchimpConfig;
+  routes: RoutesConfig;
+  protectedRoutes: ProtectedRoutesConfig;
+  baseURL: string;
+  fonts: FontsConfig;
+  style: StyleConfig;
+  schema: SchemaConfig;
+  sameAs: SameAsConfig;
+  socialSharing: SocialSharingConfig;
+  effects: EffectsConfig;
+  dataStyle: DataStyleConfig;
+};

@@ -24,7 +24,6 @@ interface Post {
   content: string;
 }
 
-// FIXED: We updated params to be a Promise so Next.js knows to wait for it!
 interface WorkProps {
   params: Promise<{
     slug: string;
@@ -39,7 +38,6 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: WorkProps) {
-  // FIXED: We added 'await' here so it successfully grabs the URL!
   const resolvedParams = await params;
   const post = getPosts(['src', 'app', 'work', 'projects']).find((post: Post) => post.slug === resolvedParams.slug);
 
@@ -48,7 +46,6 @@ export async function generateMetadata({ params }: WorkProps) {
   }
 
   const { title, publishedAt: publishedTime, summary: description, images } = post.metadata;
-  // FIXED: Ensure we are grabbing the first image in the array correctly
   const ogImage = images && images.length > 0 ? images : `${baseURL}/api/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -65,7 +62,6 @@ export async function generateMetadata({ params }: WorkProps) {
   };
 }
 
-// FIXED: We changed this to an 'async' function so we can 'await' the params!
 export default async function Project({ params }: WorkProps) {
   const resolvedParams = await params;
   const post = getPosts(['src', 'app', 'work', 'projects']).find((post: Post) => post.slug === resolvedParams.slug);
@@ -92,7 +88,12 @@ export default async function Project({ params }: WorkProps) {
         </RevealFx>
       </Column>
       <RevealFx translateY="16" delay={0.4} fillWidth>
-        <CustomMDX source={post.content} />
+        
+        {/* FIXED: We wrapped your content perfectly inside a <Column> here so the text stacks vertically! */}
+        <Column as="article" fillWidth gap="24">
+          <CustomMDX source={post.content} />
+        </Column>
+
       </RevealFx>
     </Column>
   );
