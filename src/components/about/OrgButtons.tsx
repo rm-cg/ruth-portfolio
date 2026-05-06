@@ -27,7 +27,7 @@ const orgs = [
   {
     id: "pnhs",
     name: "PNHS Research Club",
-    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778065479/PNHS_LOGO_pcm2tg.jpg",
+    logo: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778068754/PNHS_LOGO_ywopdx.jpg",
     link: "/blog#pnhs"
   }
 ];
