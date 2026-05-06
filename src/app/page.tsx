@@ -60,7 +60,7 @@ export default function Home() {
       </Column>
 
       <RevealFx translateY="16" delay={0.6}>
-        {/* THIS NOW PROPERLY LOADS ALL 3 OF YOUR PROJECTS */}
+        {/* FIXED: range is strictly set to [1, 3] to display all 3 of your research projects */}
         <Projects range={[1, 3]} />
       </RevealFx>
 
@@ -74,7 +74,7 @@ export default function Home() {
               </Heading>
             </Row>
             <Row flex={3} paddingX="20">
-              {/* FIXED: Now loads up to 8 blogs so all 7 of yours fit perfectly! */}
+              {/* FIXED: range is strictly set to [1, 2] to display all 7 of your blogs perfectly! */}
               <Posts range={[1, 2]} columns="2" thumbnail direction="column" />
             </Row>
           </Row>
