@@ -1,4 +1,5 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import React from "react";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -45,7 +46,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Applying mathematical thinking to data and problem-solving</>,
+  headline: "Applying mathematical thinking to data and problem-solving",
   featured: {
     display: true,
     title: (
@@ -85,11 +86,7 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: (
-      <>
-        Ruth Margareth is a Mathematics student at PLM pursuing a career in Data Analysis. She specializes in data profiling and cleaning, leveraging logical rigor to transform complex datasets into structured, reliable information.
-      </>
-    ),
+    description: "Ruth Margareth is a Mathematics student at PLM pursuing a career in Data Analysis. She specializes in data profiling and cleaning, leveraging logical rigor to transform complex datasets into structured, reliable information.",
   },
   work: {
     display: true,
@@ -100,8 +97,8 @@ const about: About = {
         timeframe: "2025 - Present",
         role: "Lead Secretariat, Operations Department",
         achievements: [
-          <>Led the Secretariat team in managing documentation, correspondence, and record systems that support the department’s operations.</>,
-          <>Represented GDGoC at external and cross-department initiatives, including Echelon PH, engaging in tech and innovation discussions.</>,
+          "Led the Secretariat team in managing documentation, correspondence, and record systems that support the department’s operations.",
+          "Represented GDGoC at external and cross-department initiatives, including Echelon PH, engaging in tech and innovation discussions.",
         ],
         images: [],
       },
@@ -110,9 +107,9 @@ const about: About = {
         timeframe: "2024 - 2025",
         role: "Deputy Secretary & Associate for Program Coordination",
         achievements: [
-          <>Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.</>,
-          <>Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.</>,
-          <>Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.</>,
+          "Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.",
+          "Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.",
+          "Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.",
         ],
         images: [],
       },
@@ -121,7 +118,7 @@ const about: About = {
         timeframe: "2023 - 2024",
         role: "Assistant Secretary, Secretariat Committee",
         achievements: [
-          <>Supported documentation workflows and internal communications across department-led events and meetings using Google Suite tools.</>,
+          "Supported documentation workflows and internal communications across department-led events and meetings using Google Suite tools.",
         ],
         images: [],
       },
@@ -133,11 +130,11 @@ const about: About = {
     institutions: [
       {
         name: "Pamantasan ng Lungsod ng Maynila",
-        description: <>Bachelor of Science in Mathematics, Minor in Computer Science (2023 - Present).</>,
+        description: "Bachelor of Science in Mathematics, Minor in Computer Science (2023 - Present).",
       },
       {
         name: "Paranaque National High School - Main",
-        description: <>Science, Technology, Engineering, and Mathematics (STEM) Program. Graduated with High Honors (2017 - 2023).</>,
+        description: "Science, Technology, Engineering, and Mathematics (STEM) Program. Graduated with High Honors (2017 - 2023).",
       },
     ],
   },
@@ -147,9 +144,7 @@ const about: About = {
     skills: [
       {
         title: "Data Analysis & Visualization",
-        description: (
-          <>Applying descriptive statistics, correlation, hypothesis testing, and trend interpretation to extract actionable insights.</>
-        ),
+        description: "Applying descriptive statistics, correlation, hypothesis testing, and trend interpretation to extract actionable insights.",
         tags: [
           { name: "Statistics", icon: "chart" },
           { name: "Data Visualization", icon: "eye" },
@@ -158,9 +153,7 @@ const about: About = {
       },
       {
         title: "Programming & Database Tools",
-        description: (
-          <>Handling, querying, and structuring data using industry-standard tools and programming languages.</>
-        ),
+        description: "Handling, querying, and structuring data using industry-standard tools and programming languages.",
         tags: [
           { name: "Python", icon: "python" },
           { name: "SQL", icon: "database" },
@@ -170,9 +163,7 @@ const about: About = {
       },
       {
         title: "Documentation & Workflow Efficiency",
-        description: (
-          <>Streamlining organizational workflows with project management, structuring platforms, and AI tools.</>
-        ),
+        description: "Streamlining organizational workflows with project management, structuring platforms, and AI tools.",
         tags: [
           { name: "LaTeX", icon: "document" },
           { name: "Notion", icon: "book" },
@@ -309,7 +300,7 @@ const gallery: Gallery = {
       alt: "CoMATHradery Participant",
       orientation: "horizontal"
     }
-  ]
+  ],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
