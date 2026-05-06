@@ -179,8 +179,8 @@ const about = {
 
 const blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about data, research, and tech...",
+  label: "Involvements",
+  title: "Organzation & Community",
   description: `Read what ${person.name} has been up to recently`,
 };
 
