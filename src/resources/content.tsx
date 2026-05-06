@@ -2,48 +2,34 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Ruth Margareth",
+  lastName: "Guinto",
+  name: `Ruth Margareth C. Guinto`,
+  role: "Data Analyst & Mathematics Student",
+  avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
+  email: "guinto36ruth@gmail.com",
+  location: "Asia/Manila", 
+  languages: ["English", "Tagalog"], // Swapped 'Bahasa' for Tagalog based on your Manila residency
 };
 
-const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+const newsletter = {
+    display: true,
+    title: 'Project Log',
+    description: 'Follow my journey and transition into Data Analysis.',
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
+  // Retained only formal and professional links as requested
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/rm-cg",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/ruth-guinto", 
     essential: true,
   },
   {
@@ -60,24 +46,28 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  
+  // Updated headline to reflect your focus on math, data, and problem-solving
+  headline: <>Applying mathematical thinking to data and problem-solving</>,
+  
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">S.B.A.S.S. Research</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    // Updated featured link to highlight your award-winning flood management prototype
+    href: "/work/sensor-based-automated-sewerage-system", 
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+    I'm Ruth, a BS Mathematics student minoring in Computer Science at <Text as="span" size="xl" weight="strong">PLM</Text>. I am passionate about data analytics, algorithms, and using human-AI collaboration to create value for communities.
+    </>
   ),
 };
 
@@ -95,59 +85,59 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com", // You can update this to your actual calendar link if you use Cal.com or Calendly
   },
-  intro: {
+ intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Ruth Margareth is a Mathematics student at PLM pursuing a career in Data Analysis. She specializes in data profiling and cleaning, leveraging logical rigor to transform complex datasets into structured, reliable information.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true, 
+    title: "Organizational Experience", // Changed from Work Experience to accurately reflect your roles
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Google Developer Groups on Campus (GDGoC) - PLM",
+        timeframe: "2025 - Present",
+        role: "Lead Secretariat, Operations Department",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led the Secretariat team in managing documentation, correspondence, and record systems that support the department’s operations.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Represented GDGoC at external and cross-department initiatives, including Echelon PH, engaging in tech and innovation discussions.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [], // Left empty to remove template images
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "PLM Mathematical Society",
+        timeframe: "2024 - 2025",
+        role: "Deputy Secretary & Associate for Program Coordination",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.
+          </>,
+          <>
+            Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.
+          </>
+        ],
+        images: [],
+      },
+      {
+        company: "College of Science Youth Force",
+        timeframe: "2023 - 2024",
+        role: "Assistant Secretary, Secretariat Committee",
+        achievements: [
+          <>
+            Supported documentation workflows and internal communications across department-led events and meetings using Google Suite tools.
           </>,
         ],
         images: [],
@@ -155,149 +145,227 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true, 
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Pamantasan ng Lungsod ng Maynila",
+        description: <>Bachelor of Science in Mathematics, Minor in Computer Science (2023 - Present).</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Paranaque National High School - Main",
+        description: <>Science, Technology, Engineering, and Mathematics (STEM) Program. Graduated with High Honors (2017 - 2023).</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true, 
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Data Analysis & Visualization",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Applying descriptive statistics, correlation, hypothesis testing, and trend interpretation to extract actionable insights.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Statistics",
+            icon: "chart", // You may need to map this to an actual Once UI icon you have
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Data Visualization",
+            icon: "eye",
           },
         ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Programming & Database Tools",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Handling, querying, and structuring data using industry-standard tools and programming languages.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "Python",
+            icon: "python", // Make sure to add these icons in your /once-ui/icons.ts if not present
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
+            name: "SQL",
+            icon: "database",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Excel",
+            icon: "grid",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
+        images: [],
+      },
+      {
+        title: "Documentation & Workflow Efficiency",
+        description: (
+          <>Streamlining organizational workflows with project management, structuring platforms, and AI tools.</>
+        ),
+        tags: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "LaTeX",
+            icon: "document",
+          },
+          {
+            name: "Notion",
+            icon: "book",
+          },
+          {
+            name: "Trello",
+            icon: "layout",
           },
         ],
+        images: [],
       },
     ],
   },
 };
-
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about data, research, and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
+  label: "Projects",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Data analysis and research projects by ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  label: "Certificates",
+  title: `Certificates & Recognitions – ${person.name}`,
+  description: `A collection of professional certifications, organizational recognitions, and awards achieved by ${person.name}.`,
+  
   images: [
+    // =========================================================================
+    // 💡 GUIDE: HOW TO ADD A NEW CERTIFICATE WITH CLOUDINARY
+    // =========================================================================
+    // 1. Upload your new certificate to Cloudinary.
+    // 2. Click the "Copy URL" button on the image in Cloudinary.
+    // 3. Paste that URL directly into the `src` field below!
+    // =========================================================================
+
+    // =========================================================================
+    // 🏆 CAREER & DATA ANALYTICS CERTIFICATES (Prioritized)
+    // =========================================================================
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      // PASTE YOUR ACTUAL CLOUDINARY BASE URL OVER THE PLACEHOLDER BELOW
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Data Analytics and Fundamentals.png",
+      alt: "Data Analytics Fundamentals Certificate - DataSense Analytics",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Data Annotation.jpg",
+      alt: "Data Annotation for Aspiring BPO Professionals - UP Open University",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/DATA STUDY JAM.jpg",
+      alt: "GDGoC Data Study Jam Certificate",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Online Information Session on Data Science and Analytics.png",
+      alt: "Data Science and Analytics Information Session - DICT",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Cloud And Virtualization And Data Management.png",
+      alt: "Cloud, Virtualization, and Data Management - DTI",
+      orientation: "horizontal",
     },
+    {
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/Automation.jpg",
+      alt: "Automate Your Life Webinar",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/YOUR-CLOUD-NAME/image/upload/RRD CAMPUS TO CORPORATE.jpg",
+      alt: "Campus to Corporate Training - RR Donnelley",
+      orientation: "horizontal",
+    },
+
+    // =========================================================================
+    // 🤝 ORGANIZATIONAL LEADERSHIP & RECOGNITIONS
+    // =========================================================================
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995031/COR_OMEGA_PARTICIPANT_gahyui.jpg",
+      alt: "Global Maximum Award Champion - OME:GA PLM MathSoc",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994969/COP_ECHELON_VOLUNTEER_mfyglr.jpg",
+      alt: "Echelon Philippines Volunteer Certificate",
+      orientation: "horizontal",
+    },
+    {
+      src: "hhttps://res.cloudinary.com/djq6yl8sw/image/upload/v1777995006/COA_POWER_UP_WITH_PYTHON_AND_R_ORGANIZER_gssthk.png",
+      alt: "Power Up with Python and R Organizer",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994985/COA_MATHIRA_MATHIBAY_ORGANIZER_ke44ue.png",
+      alt: "Mathira Mathibay Organizer Certificate",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995014/COR_LITTLE_EXPERTS_GO_ON_ORGANIZER_rqex1j.png",
+      alt: "Little Experts Go On! Organizer",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995002/COA_BUILDING_BLOCKS_ORGANIZER_mr4oxw.png",
+      alt: "Building Blocks Fundraising Organizer",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994987/COA_CS_DAYS_2025_PARTICIPANT_o1f2av.png",
+      alt: "CS Days 2025 - Lumos 22",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995048/COA_TIPON_2025_CAREER_TALK_PARTICIPANT_e1cymt.png",
+      alt: "TIPON 2025 Career Talk Participant",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995048/COA_TIPON_2025_CAREER_TALK_PARTICIPANT_e1cymt.png",
+      alt: "Ready Set Grow Certificate - GDGoC",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995002/COP_GAWAD_SIPNAYAN_PARTICIPANT_tb5nmd.jpg",
+      alt: "Gawad Sipnayan Participant",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995047/COP_GLIMPSE_CAREER_TALK_PARTICIPANT_nq5lg3.jpg",
+      alt: "GLIMPSE Career Talk Participant",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994990/COA_CSGA_PARTICIPANT_aqtzfm.png",
+      alt: "College of Science General Assembly",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994989/COA_AID_YOUR_MATHMATE_ORGANIZER_2_fq8zdh.png",
+      alt: "Aid Your Mathmate Organizer",
+      orientation: "horizontal",
+    },
+    {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995043/COP__COMATHRADERY_PARTICIPANT_hdezr4.jpg",
+      alt: "CoMATHradery Participant",
+      orientation: "horizontal",
+    }
   ],
 };
 
