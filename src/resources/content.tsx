@@ -203,133 +203,113 @@ const gallery: Gallery = {
   label: "Certificates",
   title: `Certificates & Recognitions – ${person.name}`,
   description: `A collection of professional certifications, organizational recognitions, and awards achieved by ${person.name}.`,
-  
   images: [
-    // =========================================================================
-    // 💡 GUIDE: HOW TO ADD A NEW CERTIFICATE WITH CLOUDINARY
-    // =========================================================================
-    // 1. Upload your new certificate to Cloudinary.
-    // 2. Click the "Copy URL" button on the image in Cloudinary.
-    // 3. Paste that URL directly into the `src` field below!
-    // =========================================================================
-
-    // =========================================================================
-    // 🏆 CAREER & DATA ANALYTICS CERTIFICATES (Prioritized)
-    // =========================================================================
-    
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995035/Data_Annotation_dsszq7.jpg",
       alt: "Data Annotation for Aspiring BPO Professionals - UP Open University",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
-
     {
-      // PASTE YOUR ACTUAL CLOUDINARY BASE URL OVER THE PLACEHOLDER BELOW
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995038/Data_Analytics_and_Fundamentals_mxnx12.png",
       alt: "Data Analytics Fundamentals Certificate - DataSense Analytics",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
-
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995038/DATA_STUDY_JAM_vz2a1s.jpg",
       alt: "GDGoC Data Study Jam Certificate",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995041/Online_Information_Session_on_Data_Science_and_Analytics_ffsjfb.png",
       alt: "Data Science and Analytics Information Session - DICT",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995032/Cloud_And_Virtualization_And_Data_Management_znxe22.png",
       alt: "Cloud, Virtualization, and Data Management - DTI",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995026/Automation_krleei.jpg",
       alt: "Automate Your Life Webinar",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995041/RRD_CAMPUS_TO_CORPORATE_oxrb2w.jpg",
       alt: "Campus to Corporate Training - RR Donnelley",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
-
-    // =========================================================================
-    // 🤝 ORGANIZATIONAL LEADERSHIP & RECOGNITIONS
-    // =========================================================================
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995031/COR_OMEGA_PARTICIPANT_gahyui.jpg",
       alt: "Global Maximum Award Champion - OME:GA PLM MathSoc",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994969/COP_ECHELON_VOLUNTEER_mfyglr.jpg",
       alt: "Echelon Philippines Volunteer Certificate",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995006/COA_POWER_UP_WITH_PYTHON_AND_R_ORGANIZER_gssthk.png",
       alt: "Power Up with Python and R Organizer",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994985/COA_MATHIRA_MATHIBAY_ORGANIZER_ke44ue.png",
       alt: "Mathira Mathibay Organizer Certificate",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995014/COR_LITTLE_EXPERTS_GO_ON_ORGANIZER_rqex1j.png",
       alt: "Little Experts Go On! Organizer",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995002/COA_BUILDING_BLOCKS_ORGANIZER_mr4oxw.png",
       alt: "Building Blocks Fundraising Organizer",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994987/COA_CS_DAYS_2025_PARTICIPANT_o1f2av.png",
       alt: "CS Days 2025 - Lumos 22",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995048/COA_TIPON_2025_CAREER_TALK_PARTICIPANT_e1cymt.png",
       alt: "TIPON 2025 Career Talk Participant",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
-      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995048/COA_TIPON_2025_CAREER_TALK_PARTICIPANT_e1cymt.png",
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995022/COP_RSG_PARTICIPANT_njbgrv.jpg",
       alt: "Ready Set Grow Certificate - GDGoC",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995002/COP_GAWAD_SIPNAYAN_PARTICIPANT_tb5nmd.jpg",
       alt: "Gawad Sipnayan Participant",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995047/COP_GLIMPSE_CAREER_TALK_PARTICIPANT_nq5lg3.jpg",
       alt: "GLIMPSE Career Talk Participant",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994990/COA_CSGA_PARTICIPANT_aqtzfm.png",
       alt: "College of Science General Assembly",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777994989/COA_AID_YOUR_MATHMATE_ORGANIZER_2_fq8zdh.png",
       alt: "Aid Your Mathmate Organizer",
-      orientation: "horizontal",
+      orientation: "horizontal"
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995043/COP__COMATHRADERY_PARTICIPANT_hdezr4.jpg",
       alt: "CoMATHradery Participant",
-      orientation: "horizontal",
+      orientation: "horizontal"
     }
-  ],
+  ]
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
