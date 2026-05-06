@@ -4,21 +4,22 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Ruth Margareth",
   lastName: "Guinto",
-  name: "Ruth Margareth C. Guinto",
+  name: `Ruth Margareth C. Guinto`,
   role: "Data Analyst & Mathematics Student",
   avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
   email: "guinto36ruth@gmail.com",
-  location: "Asia/Manila",
-  languages: ["English", "Tagalog"],
+  location: "Asia/Manila", 
+  languages: ["English", "Tagalog"], // Swapped 'Bahasa' for Tagalog based on your Manila residency
 };
 
-const newsletter: Newsletter = {
-  display: true,
-  title: "Project Log",
-  description: "Follow my journey and transition into Data Analysis.",
+const newsletter = {
+    display: true,
+    title: 'Project Log',
+    description: 'Follow my journey and transition into Data Analysis.',
 };
 
 const social: Social = [
+  // Retained only formal and professional links as requested
   {
     name: "GitHub",
     icon: "github",
@@ -28,7 +29,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/ruth-guinto",
+    link: "https://www.linkedin.com/in/ruth-guinto", 
     essential: true,
   },
   {
@@ -45,7 +46,10 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
+  
+  // Updated headline to reflect your focus on math, data, and problem-solving
   headline: <>Applying mathematical thinking to data and problem-solving</>,
+  
   featured: {
     display: true,
     title: (
@@ -57,11 +61,12 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work/sensor-based-automated-sewerage-system",
+    // Updated featured link to highlight your award-winning flood management prototype
+    href: "/work/sensor-based-automated-sewerage-system", 
   },
   subline: (
     <>
-      I'm Ruth, a BS Mathematics student minoring in Computer Science at <Text as="span" size="xl" weight="strong">PLM</Text>. I am passionate about data analytics, algorithms, and using human-AI collaboration to create value for communities.
+    I'm Ruth, a BS Mathematics student minoring in Computer Science at <Text as="span" size="xl" weight="strong">PLM</Text>. I am passionate about data analytics, algorithms, and using human-AI collaboration to create value for communities.
     </>
   ),
 };
@@ -80,9 +85,9 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com", // You can update this to your actual calendar link if you use Cal.com or Calendly
   },
-  intro: {
+ intro: {
     display: true,
     title: "Introduction",
     description: (
@@ -92,27 +97,37 @@ const about: About = {
     ),
   },
   work: {
-    display: true,
-    title: "Organizational Experience",
+    display: true, 
+    title: "Organizational Experience", // Changed from Work Experience to accurately reflect your roles
     experiences: [
       {
         company: "Google Developer Groups on Campus (GDGoC) - PLM",
         timeframe: "2025 - Present",
         role: "Lead Secretariat, Operations Department",
         achievements: [
-          <>Led the Secretariat team in managing documentation, correspondence, and record systems that support the department’s operations.</>,
-          <>Represented GDGoC at external and cross-department initiatives, including Echelon PH, engaging in tech and innovation discussions.</>,
+          <>
+            Led the Secretariat team in managing documentation, correspondence, and record systems that support the department’s operations.
+          </>,
+          <>
+            Represented GDGoC at external and cross-department initiatives, including Echelon PH, engaging in tech and innovation discussions.
+          </>,
         ],
-        images: [],
+        images: [], // Left empty to remove template images
       },
       {
         company: "PLM Mathematical Society",
         timeframe: "2024 - 2025",
         role: "Deputy Secretary & Associate for Program Coordination",
         achievements: [
-          <>Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.</>,
-          <>Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.</>,
-          <>Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.</>,
+          <>
+            Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.
+          </>,
+          <>
+            Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.
+          </>,
+          <>
+            Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.
+          </>
         ],
         images: [],
       },
@@ -121,14 +136,16 @@ const about: About = {
         timeframe: "2023 - 2024",
         role: "Assistant Secretary, Secretariat Committee",
         achievements: [
-          <>Supported documentation workflows and internal communications across department-led events and meetings using Google Suite tools.</>,
+          <>
+            Supported documentation workflows and internal communications across department-led events and meetings using Google Suite tools.
+          </>,
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true,
+    display: true, 
     title: "Studies",
     institutions: [
       {
@@ -142,7 +159,7 @@ const about: About = {
     ],
   },
   technical: {
-    display: true,
+    display: true, 
     title: "Technical skills",
     skills: [
       {
@@ -151,8 +168,14 @@ const about: About = {
           <>Applying descriptive statistics, correlation, hypothesis testing, and trend interpretation to extract actionable insights.</>
         ),
         tags: [
-          { name: "Statistics", icon: "chart" },
-          { name: "Data Visualization", icon: "eye" },
+          {
+            name: "Statistics",
+            icon: "chart", // You may need to map this to an actual Once UI icon you have
+          },
+          {
+            name: "Data Visualization",
+            icon: "eye",
+          },
         ],
         images: [],
       },
@@ -162,9 +185,18 @@ const about: About = {
           <>Handling, querying, and structuring data using industry-standard tools and programming languages.</>
         ),
         tags: [
-          { name: "Python", icon: "python" },
-          { name: "SQL", icon: "database" },
-          { name: "Excel", icon: "grid" },
+          {
+            name: "Python",
+            icon: "python", // Make sure to add these icons in your /once-ui/icons.ts if not present
+          },
+          {
+            name: "SQL",
+            icon: "database",
+          },
+          {
+            name: "Excel",
+            icon: "grid",
+          },
         ],
         images: [],
       },
@@ -174,16 +206,24 @@ const about: About = {
           <>Streamlining organizational workflows with project management, structuring platforms, and AI tools.</>
         ),
         tags: [
-          { name: "LaTeX", icon: "document" },
-          { name: "Notion", icon: "book" },
-          { name: "Trello", icon: "layout" },
+          {
+            name: "LaTeX",
+            icon: "document",
+          },
+          {
+            name: "Notion",
+            icon: "book",
+          },
+          {
+            name: "Trello",
+            icon: "layout",
+          },
         ],
         images: [],
       },
     ],
   },
 };
-
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
