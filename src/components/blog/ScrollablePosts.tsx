@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import type { ReactNode } from "react";
-import { Row, IconButton } from "@once-ui-system/core";
+import { IconButton } from "@once-ui-system/core";
 
 // 100% Strict Typing
 interface ScrollablePostsProps {
@@ -23,10 +23,11 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
   };
 
   return (
-    <Row flex={3} position="relative" vertical="center" fillWidth>
+    // 100% Bulletproof Flexbox: Three items strictly side-by-side. 
+    <div style={{ display: "flex", alignItems: "center", width: "100%", gap: "16px" }}>
       
-      {/* GUARANTEED VISIBLE LEFT ARROW: Floating over the cards */}
-      <div style={{ position: "absolute", left: "8px", zIndex: 999 }}>
+      {/* LEFT ARROW: flexShrink 0 guarantees it cannot be squished or hidden */}
+      <div style={{ flexShrink: 0 }}>
         <IconButton 
           onClick={() => scroll("left")} 
           icon="chevronLeft" 
@@ -35,15 +36,15 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
         />
       </div>
 
+      {/* THE CARDS: flex 1 forces it to fit perfectly between the two arrows */}
       <div
         ref={scrollRef}
         style={{
           display: "flex",
-          width: "100%",
+          flex: 1, 
           overflowX: "auto",
           gap: "16px",
-          // Added 48px padding to the sides so cards don't hide under the arrows
-          padding: "16px 48px 24px 48px", 
+          paddingBottom: "16px", 
           scrollSnapType: "x mandatory",
           scrollbarWidth: "none", 
           msOverflowStyle: "none",
@@ -55,8 +56,8 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
         {children}
       </div>
 
-      {/* GUARANTEED VISIBLE RIGHT ARROW: Floating over the cards */}
-      <div style={{ position: "absolute", right: "8px", zIndex: 999 }}>
+      {/* RIGHT ARROW: flexShrink 0 guarantees it cannot be squished or hidden */}
+      <div style={{ flexShrink: 0 }}>
         <IconButton 
           onClick={() => scroll("right")} 
           icon="chevronRight" 
@@ -65,6 +66,6 @@ export default function ScrollablePosts({ children }: ScrollablePostsProps) {
         />
       </div>
 
-    </Row>
+    </div>
   );
 }
