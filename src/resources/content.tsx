@@ -214,7 +214,7 @@ const gallery = {
     },
      {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778316084/Eskwelab_Career_Info-Session_esptqt.jpg",
-      alt: "ESKWELAB Career Info-Session",
+      alt: "ESKWELAB Data Career Info-Session",
       orientation: "horizontal",
     },
     {
