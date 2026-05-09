@@ -84,7 +84,7 @@ const pnhsPhotos = [
   { id: "PNHS 6", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041554/received_156532223979985_dbnmib.jpg" },
   { id: "PNHS 7", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041553/DSC_0939_z95vcp.jpg" },
   { id: "PNHS 8", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041538/DSC_0792_gqbmfu.jpg" },
-  { id: "PNHS 9", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041531/DSC_0005_qyj6g8.jpg" },
+  { id: "PNHS 9", src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041546/DSC_0794_pwvbvi.jpg" },
 ];
 
 export default function Involvement() {
