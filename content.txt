@@ -4,7 +4,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Ruth Margareth",
   lastName: "Guinto",
-  name: `Ruth Margareth C. Guinto`,
+  name: `Ruth Margareth Guinto`,
   role: "Aspiring Data Analyst & Mathematics Student",
   avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
   email: "guinto36ruth@gmail.com",
