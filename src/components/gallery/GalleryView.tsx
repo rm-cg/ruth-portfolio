@@ -38,7 +38,7 @@ export default function GalleryView() {
           variant={filter === "Data Analytics" ? "primary" : "secondary"} 
           onClick={() => setFilter("Data Analytics")}
         >
-          Data Analytics & Tech
+          Data Analytics / Career
         </Button>
         <Button 
           variant={filter === "Organizational" ? "primary" : "secondary"} 

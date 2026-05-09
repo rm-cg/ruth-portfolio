@@ -212,6 +212,11 @@ const gallery = {
       alt: "GDGoC Data Study Jam Certificate",
       orientation: "horizontal",
     },
+     {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778316084/Eskwelab_Career_Info-Session_esptqt.jpg",
+      alt: "ESKWELAB Career Info-Session",
+      orientation: "horizontal",
+    },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995041/Online_Information_Session_on_Data_Science_and_Analytics_ffsjfb.png",
       alt: "Data Science and Analytics Information Session - DICT",
@@ -302,6 +307,7 @@ const gallery = {
       alt: "CoMATHradery Participant",
       orientation: "horizontal",
     }
+   
   ],
 };
 
