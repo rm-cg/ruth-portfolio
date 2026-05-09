@@ -23,6 +23,7 @@ export default function GalleryView() {
                          image.alt.toLowerCase().includes("python") || 
                          image.alt.toLowerCase().includes("cloud") ||
                          image.alt.toLowerCase().includes("automate");
+                         image.alt.toLowerCase().includes("career");
 
     if (filter === "Data Analytics") return isDataOrTech;
     if (filter === "Organizational") return !isDataOrTech; // Everything else goes to Org
