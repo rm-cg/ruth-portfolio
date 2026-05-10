@@ -237,6 +237,11 @@ const gallery = {
       alt: "Career: Campus to Corporate Training - RR Donnelley",
       orientation: "horizontal",
     },
+        {
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778398165/COP_Participants_Ruth_Margareth_Guinto_1_xuv8rk.jpg",
+      alt: "Research Colloquium PLM MathSoc",
+      orientation: "horizontal",
+    },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995031/COR_OMEGA_PARTICIPANT_gahyui.jpg",
       alt: "Global Maximum Award Champion - OME:GA PLM MathSoc",
