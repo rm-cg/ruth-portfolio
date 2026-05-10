@@ -298,7 +298,7 @@ const gallery: Gallery = {
     },
     {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1777995041/RRD_CAMPUS_TO_CORPORATE_oxrb2w.jpg",
-      alt: "Career: Campus to Corporate Training - RR Donnelley",
+      alt: "Data Campus to Corporate Training - RR Donnelley",
       orientation: "horizontal",
     },
 
