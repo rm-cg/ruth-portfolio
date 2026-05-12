@@ -2,7 +2,6 @@ import React from "react";
 import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Line, Media } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
 import { getPosts } from "@/utils/utils";
 import Post from "@/components/blog/Post";
 import ScrollablePosts from "@/components/blog/ScrollablePosts";
@@ -109,9 +108,7 @@ export default function Home() {
         </Column>
       </Column>
 
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[2]} />
-      </RevealFx>
+      {/* Projects section has been completely removed from here! */}
 
       {routes["/blog"] && (
         <Column id="insights" fillWidth gap="24" marginBottom="l">
