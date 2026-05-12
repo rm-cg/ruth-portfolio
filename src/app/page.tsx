@@ -70,7 +70,6 @@ export default function Home() {
               </Button>
             </RevealFx>
 
-            {/* 👇 FEATURED IMAGE BLOCK 👇 */}
             <RevealFx
               translateY="24"
               delay={0.5}
@@ -90,7 +89,7 @@ export default function Home() {
                   width: "100%",
                   objectFit: "cover",
                   filter: "drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))",
-                  marginBottom: "-120px",
+                  marginBottom: "-40px", // Changed from -120px to -40px to stop the overlap
                   animation: "float 3s ease-in-out infinite",
                   transition: "transform 0.5s ease"
                 }}
@@ -103,12 +102,9 @@ export default function Home() {
                 }
               `}</style>
             </RevealFx>
-            {/* 👆 END FEATURED IMAGE BLOCK 👆 */}
           </Column>
         </Column>
       </Column>
-
-      {/* Projects section has been completely removed from here! */}
 
       {routes["/blog"] && (
         <Column id="insights" fillWidth gap="24" marginBottom="l">
