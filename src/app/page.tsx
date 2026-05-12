@@ -89,7 +89,7 @@ export default function Home() {
                   width: "100%",
                   objectFit: "cover",
                   filter: "drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))",
-                  marginBottom: "-40px", // Changed from -120px to -40px to stop the overlap
+                  marginBottom: "-37px",
                   animation: "float 3s ease-in-out infinite",
                   transition: "transform 0.5s ease"
                 }}
@@ -107,7 +107,8 @@ export default function Home() {
       </Column>
 
       {routes["/blog"] && (
-        <Column id="insights" fillWidth gap="24" marginBottom="l">
+        // 1. GAP REMOVED: Changed marginBottom from "l" to "0"
+        <Column id="insights" fillWidth gap="24" marginBottom="0">
           <Row fillWidth paddingRight="64">
             <Line maxWidth={48} />
           </Row>
@@ -134,7 +135,19 @@ export default function Home() {
         </Column>
       )}
 
-      <Mailchimp />
+      {/* 👇 SMALLER & MUCH CLOSER MAILCHIMP SECTION 👇 */}
+      <Column 
+        fillWidth 
+        horizontal="center" 
+        style={{ 
+          maxWidth: "450px",    // 2. SHRUNK FURTHER: Shrunk down to 450px for a compact look
+          marginTop: "-80px"    // 3. PULLED UP MORE: -80px pulls it up by roughly half an inch
+        }}
+      >
+        <Mailchimp />
+      </Column>
+      {/* 👆 END OF NEW MAILCHIMP SECTION 👆 */}
+
     </Column>
   );
 }
