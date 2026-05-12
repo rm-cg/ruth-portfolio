@@ -108,7 +108,7 @@ const about = {
         timeframe: "2024 - 2025",
         role: "Deputy Secretary, Audit Committee",
         achievements: [
-          "Structured and categorized 10+ financial records using Excel, optimizing document traceability and data accuracy for inventory tracking.",
+          "Structured and categorized 10+ financial records, optimizing document traceability and data accuracy for inventory tracking.",
           "Audited liquidation reports and budget datasets to maintain strict financial transparency and structured record-keeping."
         ],
         images: [],
