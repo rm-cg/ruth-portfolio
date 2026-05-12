@@ -138,8 +138,9 @@ const about = {
         description: (
           <>
             Science, Technology, Engineering, and Mathematics (STEM) Program <br />
+            <span style={{ fontSize: "10px" }}>
             <i>Graduated SHS with High Honors (2023)</i> <br />
-            <i>Graduated JHS with Honors (2021) </i>
+            <i>Graduated JHS with Honors (2021) </i></span>
           </>
         ),
       },
