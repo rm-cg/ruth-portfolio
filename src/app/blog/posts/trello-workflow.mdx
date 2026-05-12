@@ -1,99 +1,44 @@
 ---
-title: "Optimizing Workflows: Planning and Documentation with Trello"
-summary: "How I use Trello for project management, data structuring, and tracking organizational workflows."
-publishedAt: "2026-03-07"
+title: "Optimizing Workflows: Visual Project Management with Trello"
+subtitle: "How I use Trello to structure my personal goals, track upskilling, and manage tasks."
+summary: "A look into my 7-board 'Life OS' and how I use Trello's visual Kanban system, automations, and integrations to stay organized without writing a single line of code."
+publishedAt: "2026-05-07"
 image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778085546/ch1_03__1__oylmmr.png"
-tag: "Blog"
+tag: "Project Log"
 ---
 
-## Trello Workspace Setup
+## The "Life OS" Approach
 
-Efficient project management starts with a well-organized [Trello workspace](https://trello.com). I use it to structure documentation workflows, track data analysis tasks, and plan organizational events.
+As an aspiring Data Analyst, I naturally love structuring chaotic information into organized, readable formats. This doesn't just apply to datasets—it applies to my everyday life. 
 
-## Board Configuration
+Instead of juggling scattered to-do lists, I use [Trello](https://trello.com) as my ultimate central hub. In fact, I actually manage **7 different boards**, each dedicated to a specific aspect of my life! I lowkey want to be a Trello ambassador at this point because of how much I rely on it to keep my life together.
 
-Create a dedicated board and configure your lists to track the project's lifecycle. Here is an example of how I structure task parameters and API requests for organizational transparency.
+My main workspace is my **Personal Goal Board**, where I manage everything in one go. From tracking my university requirements and organization workflows, to planning out my future career roles like "Data Analyst" and "Content Creator", everything has its dedicated, highly organized space.
 
-<CodeBlock
-    highlight="2"
-    codes={[
-  {
-    code:
-`const trelloBoard = {
-    action: 'https://api.trello.com/1/boards?parameters',
-    lists: {
-      ...
-    }
-};`, 
-    language: "tsx",
-    label: "scripts/trello_config.js"
-  }
-]} />
+## The Visual Kanban Workflow
 
-## Task Card Content
+I don't use complex coding or API configurations to manage my tasks; I rely entirely on Trello's highly visual Kanban system. This allows me to see my entire project pipeline at a single glance. 
 
-You can efficiently modify the labels and descriptions of your tracking cards to categorize your data structuring processes.
+I structure my workflow using customized lists that match my priorities:
+- **`** TO DO`**: My general backlog for upcoming tasks, like reviewing for the Civil Service Exam.
+- **`DOING ~`**: Tasks I am actively working on.
+- **`*** URGENT`**: High-priority tasks that need immediate attention.
+- **`-- DONE --`**: Completed tasks, which gives a great sense of accomplishment.
 
-<CodeBlock
-    highlight="2"
-    codes={[
-  {
-    code:
-`const taskCard = {
-    display: true,
-    title: <>Data Analysis & Visualization Phase</>,
-    description: (
-      <>
-        Tracking the progress of descriptive statistics, correlation mapping, and trend interpretation for the research team.
-      </>
-    ),
-};`, 
-    language: "tsx",
-    label: "scripts/task_content.js"
-  }
-]} />
+I also maintain specialized lists for specific long-term goals, such as **"DATA ANALYTICS COURSES"** to track my progress on DataCamp and Coursera, and **"LIST ACHIEVEMENTS!!"** where I compile my certificates and milestones. 
 
-## Workflow Automation
+## Centralizing Resources and Links
 
-There's a pre-configured automation setup that you can modify in the `trelloBoard` object. Set workflow elements such as triggers, actions, due dates, and configure their appearance to optimize your team's workflow efficiency.
+One of the biggest advantages of using Trello is that every card acts as a mini-database. Instead of searching through my computer for files, I attach everything directly to the relevant task card. 
 
-<CodeBlock
-    codeHeight={24}
-    marginBottom="16"
-    codes={[
-  {
-    code:
-`const trelloBoard = {
-    action: 'https://api.trello.com/1/cards?parameters',
-    automation: {
-      trigger: {
-        active: true,
-        event: 'cardMoved',
-        listName: 'In Progress'
-      },
-      labels: {
-        display: true,
-        color: 'brand-on-background-weak',
-        tag: 'Data Structuring'
-      },
-      checklist: {
-        display: true,
-        items: 5,
-        status: 'pending'
-      },
-      tracking: {
-        display: false,
-        color: 'neutral-alpha-weak',
-        opacity: 100
-      },
-      dueDates: {
-        display: true,
-        color: 'accent-solid-strong',
-        reminder: '24h'
-      }
-  }
-}`, 
-    language: "tsx",
-    label: "scripts/trello_config.js"
-  }
-]} />
+For example, on my "CERTIFICATES" card, I attach direct links to my OneDrive folders so my credentials are always one click away. For my "ESKWELAB: INTERNSHIP PROGRAM" card, I attach external links, application forms, and reference materials directly into the description. This keeps my workflow completely frictionless.
+
+## Built-in Automations and Integrations
+
+You don't need to know how to code to build automated workflows. I heavily utilize Trello's built-in features to keep my boards running smoothly:
+
+1. **Butler Automations:** I use Trello's native automation bot to instantly trigger actions, such as automatically checking off due dates when a card is moved to the `-- DONE --` list.
+2. **Planyway Integration:** To visualize my deadlines better, I integrate my board with Planyway. This syncs my Trello cards to a calendar format, ensuring I never miss an important date or seminar.
+3. **Custom Labels:** I use a color-coded label system to instantly categorize the urgency and type of each task.
+
+By utilizing a visual project management tool like Trello, I can apply my analytical mindset to my own productivity. Managing my 7 boards ensures that I approach every project—whether it's an academic research paper or a data science bootcamp—with structure, efficiency, and clear execution.

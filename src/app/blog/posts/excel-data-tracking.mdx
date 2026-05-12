@@ -1,60 +1,62 @@
 ---
-title: "MS Excel: Structuring Complex Data"
-summary: "Tackling data tracking challenges, avoiding mismatches, and building automated sheets using advanced formulas."
+title: "MS Excel: Beyond Formulas with Power Query"
+subtitle: "Transforming messy organizational records into automated data pipelines."
+summary: "How I transitioned from manual data cleaning to automated workflows using Excel's Power Query for organizational data."
 publishedAt: "2026-05-07"
 image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778085298/structured-references-excel_wbfhbt.png"
-tag: "Blog"
+tag: "Project Log"
 ---
 
-## The Reality of Raw Data
+## The Reality of Messy Organizational Data
 
-As a an aspiring Data Analyst, one of the most common challenges is dealing with raw, unstructured data. Whether handling hundreds of event attendees, survey responses, or complex record-keeping systems, raw data is almost always messy. Before any descriptive statistics or trend interpretations can happen, the data must be rigorously cleaned and structured.
+As the Lead Secretariat for GDGoC - PLM and a Deputy Secretary for the PLM Mathematical Society, I handle a massive influx of data on a weekly basis. Whether it is tracking the 2,874 ticket sales from our fundraising campaign or processing post-event feedback forms from hundreds of attendees, raw data is rarely ever clean. 
 
-## Data Standardization and Tables
+Names are typed in lowercase, email addresses have trailing spaces, and duplicate registrations are inevitable. For a long time, I relied on complex nested formulas to clean this data. But as my datasets grew, these formulas made the workbooks incredibly slow and prone to breaking. That is when I shifted my workflow to **Power Query**.
 
-Handling large datasets automatically generates the need for clean, structured records. My first step is always converting raw data ranges into **Official Excel Tables (Ctrl + T)**. 
+## Enter Power Query: The Built-in ETL Tool
 
-Unlike static ranges (e.g., `A2:A100`), Official Tables use **Structured References**. This means when new data is added to the bottom of the list, all charts, pivot tables, and nested formulas automatically expand to include the new rows without needing manual updates. This simple step eliminates a massive percentage of data-entry errors.
+Many people treat Excel simply as a digital ledger, but underneath its surface lies Power Query—a robust **Extract, Transform, Load (ETL)** engine. 
+
+Instead of writing temporary formulas in adjacent columns, Power Query allows you to connect to a raw data source, apply a sequence of cleaning steps, and load a perfectly structured dataset into a Data Model or Pivot Table. The best part? It records every single step. When new event data comes in next month, I simply hit "Refresh," and the entire cleaning process happens automatically.
 
 <Feedback
     icon
     marginBottom="16"
     description={<>
-        Pro Tip: Always update your <InlineCode>Data Validation</InlineCode> rules (Dropdown lists, date restrictions, character limits) <Text as="span" weight="strong">before</Text> you start inputting records. Preventing bad data entry is much faster than cleaning it later.
+        Pro Tip: Always try to load your cleaned queries as a <InlineCode>Connection Only</InlineCode> and add them directly to the <Text as="span" weight="strong">Data Model</Text>. Loading massive tables directly into an Excel worksheet consumes unnecessary memory and slows down your file.
     </>}
 />
 
-## Error Prevention & Advanced Formulas
+## Automating the Cleanup with M-Code
 
-Tracking complex records across multiple sheets requires heavy relational data management. While many beginners rely on `VLOOKUP`, it breaks the moment a new column is inserted into the dataset. 
+While Power Query has a fantastic user interface, its true power lies in its underlying functional language: **M-Code**. 
 
-Instead, I rely on the **INDEX and MATCH** combination (or `XLOOKUP`). This approach separates the lookup array from the return array, making the spreadsheet structurally sound and immune to column shifts. 
-
-Here is an example of an automated check I use to cross-reference a master database and prevent human error:
+When cross-referencing attendance sheets with our master registration database, I use M-Code to standardize text formats and filter out invalid entries before any analysis even begins. Here is a snippet of the backend code I use to automate our attendee profiling:
 
 <CodeBlock
     marginBottom="16"
-    highlight="2-4"
+    highlight="3-4"
     codes={[
       {
         code:
-`=IFERROR(
-  INDEX(MasterList[Status],
-  MATCH([@ID_Number], MasterList[ID_Number], 0)),
-  "Pending"
-)`,
-        language: "plaintext",
-        label: "data_tracker.xlsx"
+`let
+    Source = Excel.CurrentWorkbook(){[Name="Raw_Registrants"]}[Content],
+    CleanedText = Table.TransformColumns(Source,{{"Full_Name", Text.Proper, type text}}),
+    FilteredNulls = Table.SelectRows(CleanedText, each [Email_Address] <> null),
+    RemovedDuplicates = Table.Distinct(FilteredNulls, {"Email_Address"})
+in
+    RemovedDuplicates`,
+        language: "powerquery",
+        label: "attendee_preprocessing.pq"
       }
     ]}
 />
 
 ### Breaking Down the Logic:
-1. **`MATCH`**: Searches the `MasterList` for the exact `[@ID_Number]` in the current row and returns its relative position (row number).
-2. **`INDEX`**: Takes that exact row number and retrieves the corresponding value from the `MasterList[Status]` column.
-3. **`IFERROR`**: If the ID number isn't found (perhaps a new entry that hasn't been synced), it intercepts the `#N/A` error and gracefully returns `"Pending"` instead of breaking the sheet's calculations.
+1. **`Text.Proper`**: Automatically scans the `Full_Name` column and converts all text to Title Case (e.g., transforming "juan dela cruz" to "Juan Dela Cruz"), ensuring our certificate generation is perfectly formatted.
+2. **`FilteredNulls`**: Instantly removes any row where the `Email_Address` is missing, preventing bounce-backs during our email campaigns.
+3. **`Table.Distinct`**: Scans the dataset and removes duplicate submissions based on the email address, ensuring our attendance metrics are entirely accurate.
 
-## From Structuring to Insights
+## The Analyst's Mindset
 
-By enforcing strict data validation, utilizing structured table references, and writing dynamic lookup arrays, I ensure that the foundation of the dataset is rock solid. Once the data is successfully structured, seamlessly feeding it into **Pivot Tables** for hypothesis testing and trend interpretation becomes a completely frictionless process.
-Hit Save! This version is packed with legitimate technical knowledge. It explains why you use 
+By mastering Power Query, I stopped spending hours doing manual data entry and started acting like a true Data Analyst. I now spend my time interpreting the results, evaluating event success, and building dynamic dashboards. Learning how to structure data pipelines in Excel has also given me a massive advantage as I transition into handling larger databases with SQL and Python.
