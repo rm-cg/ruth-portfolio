@@ -106,11 +106,11 @@ const about = {
       {
         company: "PLM Mathematical Society",
         timeframe: "2024 - 2025",
-        role: "Deputy Secretary & Associate for Program Coordination",
+        role: "Associate for Program Coordination and Operations | Deputy Secretary, Strategic Partnerships & Relations | Deputy Secretary, Audit Committee",
         achievements: [
-          "Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.",
-          "Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.",
-          "Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds."
+            "Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.",
+            "Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.",
+            "Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.",
         ],
         images: [],
       },
