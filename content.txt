@@ -14,7 +14,7 @@ const person: Person = {
 
 const newsletter = {
     display: true,
-    title: 'Project Log',
+    title: 'Connect with Ruth',
     description: 'Follow my journey and transition into Data Analysis.',
 };
 

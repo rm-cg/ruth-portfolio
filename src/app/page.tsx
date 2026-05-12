@@ -1,4 +1,4 @@
-import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Line, Media } from "@once-ui-system/core"; // 1. Added Media here
+import { Heading, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, Line, Media } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
@@ -50,33 +50,43 @@ export default function Home() {
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl"> {home.subline} </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-            <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && ( <Avatar marginRight="8" style={{ marginLeft: "-0.75rem" }} src={person.avatar} size="m" /> )}
-                {about.title}
-              </Row>
-            </Button>
-          </RevealFx>
-
-          {/* 2. Inserted the Media block here */}
-          <RevealFx translateY="12" delay={0.5} horizontal="center" paddingTop="40" paddingBottom="16">
-            <Media
-              src="https://res.cloudinary.com/djq6yl8sw/image/upload/v1778078876/neural-networks_bv7t3p.png"
-              alt="Neural Networks Illustration"
-              radius="l"
-              aspectRatio="16/9"
-              border="neutral-alpha-weak"
-              sizes="(max-width: 768px) 100vw, 768px"
-              style={{ maxWidth: "700px", width: "100%", objectFit: "cover" }}
-            />
-          </RevealFx>
           
+          <Column fillWidth horizontal="center" gap="12"> {/* Inner column to control spacing tightly */}
+            <RevealFx translateY="12" delay={0.4} horizontal="center">
+              <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
+                <Row gap="8" vertical="center" paddingRight="4">
+                  {about.avatar.display && ( <Avatar marginRight="8" style={{ marginLeft: "-0.75rem" }} src={person.avatar} size="m" /> )}
+                  {about.title}
+                </Row>
+              </Button>
+            </RevealFx>
+
+            <RevealFx 
+              translateY="24" 
+              speed="medium" 
+              delay={0.5} 
+              horizontal="center" 
+              paddingTop="12" 
+              paddingBottom="0"
+            >
+              <Media
+                src="https://res.cloudinary.com/djq6yl8sw/image/upload/v1778078876/neural-networks_bv7t3p.png"
+                alt="Neural Networks Illustration"
+                radius="l"
+                aspectRatio="16/9"
+                border="neutral-alpha-weak"
+                sizes="(max-width: 768px) 100vw, 768px"
+                style={{ maxWidth: "700px", width: "100%", objectFit: "cover" }}
+              />
+            </RevealFx>
+          </Column>
         </Column>
       </Column>
+
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[7]} />
       </RevealFx>
+
       {routes["/blog"] && (
         <Column id="insights" fillWidth gap="24" marginBottom="l">
           <Row fillWidth paddingRight="64"> <Line maxWidth={48} /> </Row>
