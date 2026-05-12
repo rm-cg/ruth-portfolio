@@ -63,10 +63,11 @@ export default function Home() {
 
             <RevealFx 
               translateY="24" 
-              speed="fast" // Changed to fast for a snappier entry
+              speed="medium" 
               delay={0.5} 
               horizontal="center" 
-              paddingTop="20"
+              // 1. ADDED PADDING HERE (Increased from 0)
+              paddingTop="20"      // Adds small space between button and image glow
               paddingBottom="0"
             >
               <Media
@@ -81,13 +82,12 @@ export default function Home() {
                   width: "100%", 
                   objectFit: "cover",
                   filter: "drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))", 
-                  marginBottom: "-20px",
-                  /* The Quick Float Animation */
+                  // 2. MODIFIED MARGIN HERE (Changed from default)
+                  marginBottom: "-40px", // Pulls the next section much closer to close the large gap
                   animation: "float 3s ease-in-out infinite",
                   transition: "transform 0.5s ease"
                 }}
               />
-              {/* This injected style block creates the float effect globally for this page */}
               <style>{`
                 @keyframes float {
                   0% { transform: translateY(0px); }
