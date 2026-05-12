@@ -142,6 +142,16 @@ const about = {
         ],
         images: [],
       },
+      {
+        company: "Research Club - PNHS Main",
+        timeframe: "2022 - 2023",
+        role: "Research Representative, PANUKI DUKI Research Fair",
+        achievements: [
+          "Employed quantitative experimental and quasi-experimental research designs.",
+          "Applied statistical analysis in differentiating floodwater levels across varying conditions, earning Best in Research Prototype, Teacher’s Choice, and Best in Audio-Visual Presentation.",
+        ],
+        images: [],
+      },
     ],
   },
   studies: {
