@@ -75,6 +75,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+
       {about.tableOfContent.display && (
         <Column
           left="0"
@@ -87,6 +88,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
+
       <Row fillWidth s={{ direction: "column" }} horizontal="center">
         {about.avatar.display && (
           <Column
@@ -121,6 +123,7 @@ export default function About() {
             <OrgButtons />
           </Column>
         )}
+
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
@@ -154,6 +157,7 @@ export default function About() {
                 />
               </Row>
             )}
+
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>
@@ -164,6 +168,7 @@ export default function About() {
             >
               {person.role}
             </Text>
+
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
@@ -220,53 +225,69 @@ export default function About() {
                 {about.work.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience) => (
-                  <Column key={experience.company} fillWidth>
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
+                {about.work.experiences.map((experience, index) => {
+                  // ✨ THE MAGIC LOGIC: Checks if the company string is essentially empty ✨
+                  const isEmptyCompany = experience.company.trim() === "";
+
+                  return (
+                    <Column 
+                      key={`${experience.company}-${index}`} 
+                      fillWidth
+                      // Dynamically pull the section up to remove the gap
+                      style={{ marginTop: isEmptyCompany ? "-32px" : "0px" }}
+                    >
+                      {/* Hide the entire Row containing Company & Timeframe if it's empty */}
+                      {!isEmptyCompany && (
+                        <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
+                          <Text id={experience.company} variant="heading-strong-l">
+                            {experience.company}
+                          </Text>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {experience.timeframe}
+                          </Text>
+                        </Row>
+                      )}
+
+                      <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                        {experience.role}
                       </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map((achievement: React.ReactNode) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={String(achievement)}
-                        >
-                          {achievement}
-                        </Text>
-                      ))}
-                    </Column>
-                    {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {(experience.images as AboutImage[]).map((image) => (
-                          <Row
-                            key={image.src}
-                            border="neutral-medium"
-                            radius="m"
-                            // FIXED: Moved minWidth and height into the CSS style tag to bypass the linter!
-                            style={{ minWidth: image.width, height: image.height }}
+
+                      <Column as="ul" gap="16">
+                        {/* 👇 THE FIX: Replaced the array index 'i' with String(achievement) 👇 */}
+                        {experience.achievements.map((achievement: React.ReactNode) => (
+                          <Text
+                            as="li"
+                            variant="body-default-m"
+                            key={String(achievement)} 
                           >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width ? image.width.toString() : "100"}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
+                            {achievement}
+                          </Text>
                         ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
+                      </Column>
+
+                      {experience.images && experience.images.length > 0 && (
+                        <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
+                          {(experience.images as AboutImage[]).map((image) => (
+                            <Row
+                              key={image.src}
+                              border="neutral-medium"
+                              radius="m"
+                              style={{ minWidth: image.width, height: image.height }}
+                            >
+                              <Media
+                                enlarge
+                                radius="m"
+                                sizes={image.width ? image.width.toString() : "100"}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Row>
+                          ))}
+                        </Row>
+                      )}
+                    </Column>
+                  );
+                })}
               </Column>
             </>
           )}
@@ -326,7 +347,6 @@ export default function About() {
                             key={image.src}
                             border="neutral-medium"
                             radius="m"
-                            // FIXED: Moved minWidth and height into the CSS style tag to bypass the linter!
                             style={{ minWidth: image.width, height: image.height }}
                           >
                             <Media
