@@ -107,7 +107,6 @@ export default function Home() {
       </Column>
 
       {routes["/blog"] && (
-        // 1. GAP REMOVED: Changed marginBottom from "l" to "0"
         <Column id="insights" fillWidth gap="24" marginBottom="0">
           <Row fillWidth paddingRight="64">
             <Line maxWidth={48} />
@@ -135,13 +134,16 @@ export default function Home() {
         </Column>
       )}
 
-      {/* 👇 SMALLER & MUCH CLOSER MAILCHIMP SECTION 👇 */}
+      {/* 👇 Pinaliit na Rectangular Mailchimp Section 👇 */}
       <Column 
         fillWidth 
         horizontal="center" 
         style={{ 
-          maxWidth: "450px",    // 2. SHRUNK FURTHER: Shrunk down to 450px for a compact look
-          marginTop: "-80px"    // 3. PULLED UP MORE: -80px pulls it up by roughly half an inch
+          marginTop: "-40px",         // Pulls it closer to the blogs
+          transform: "scale(0.8)",    // 👈 Eto yung mag-s-shrink sa kanya nang 20% proportionally (pati words)
+          transformOrigin: "top center", // Keeps it anchored to the top so there's no weird gap
+          width: "100%",
+          maxWidth: "800px"           // Binabalik yung rectangular shape
         }}
       >
         <Mailchimp />
