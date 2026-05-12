@@ -51,7 +51,7 @@ export default function Home() {
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl"> {home.subline} </Text>
           </RevealFx>
           
-          <Column fillWidth horizontal="center" gap="12"> {/* Inner column to control spacing tightly */}
+          <Column fillWidth horizontal="center" gap="0"> {/* Gap set to 0 for tightest control */}
             <RevealFx translateY="12" delay={0.4} horizontal="center">
               <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
                 <Row gap="8" vertical="center" paddingRight="4">
@@ -66,17 +66,24 @@ export default function Home() {
               speed="medium" 
               delay={0.5} 
               horizontal="center" 
-              paddingTop="12" 
+              paddingTop="20"      /* This controls the "half-inch" space below button */
               paddingBottom="0"
             >
               <Media
-                src="https://res.cloudinary.com/djq6yl8sw/image/upload/v1778078876/neural-networks_bv7t3p.png"
+                src="https://res.cloudinary.com/djq6yl8sw/image/upload/v1778562521/42c852aa1179610b826e652ef8987a9b_s14xfm.jpg"
                 alt="Neural Networks Illustration"
                 radius="l"
                 aspectRatio="16/9"
                 border="neutral-alpha-weak"
-                sizes="(max-width: 768px) 100vw, 768px"
-                style={{ maxWidth: "700px", width: "100%", objectFit: "cover" }}
+                sizes="(max-width: 900px) 100vw, 900px"
+                style={{ 
+                  maxWidth: "900px", /* Increased size */
+                  width: "100%", 
+                  objectFit: "cover",
+                  /* Static Glow Effect */
+                  filter: "drop-shadow(0 0 15px rgba(0, 255, 255, 0.4))", 
+                  marginBottom: "-20px" /* Pulls the next section closer */
+                }}
               />
             </RevealFx>
           </Column>
