@@ -106,11 +106,30 @@ const about = {
       {
         company: "PLM Mathematical Society",
         timeframe: "2024 - 2025",
-        role: "Associate for Program Coordination and Operations | Deputy Secretary, Strategic Partnerships & Relations | Deputy Secretary, Audit Committee",
+        role: "Deputy Secretary, Audit Committee",
         achievements: [
-            "Structured and categorized 10+ financial and documentation records using Excel, optimizing document traceability for inventory and audit tracking.",
-            "Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.",
-            "Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.",
+          "Structured and categorized 10+ financial records using Excel, optimizing document traceability and data accuracy for inventory tracking.",
+          "Audited liquidation reports and budget datasets to maintain strict financial transparency and structured record-keeping."
+        ],
+        images: [],
+      },
+      {
+        company: " ", // 👈 Invisible space! Prevents the org name from repeating
+        timeframe: "",
+        role: "Deputy Secretary, Strategic Partnerships & Relations",
+        achievements: [
+          "Strategized a fundraising campaign for a community outreach program, driving the sale of 2,874 tickets and generating ₱28,740 in funds.",
+          "Managed external communications and post-event follow-ups, ensuring the successful fulfillment of academic sponsorship packages."
+        ],
+        images: [],
+      },
+      {
+        company: "  ", // 👈 Two invisible spaces! 
+        timeframe: "",
+        role: "Associate for Program Coordination and Operations",
+        achievements: [
+          "Directed program flow and logistics for over 4 departmental events, successfully managing real-time operations for 300+ attendees.",
+          "Coordinated end-to-end execution across 6 major initiatives, including a university-wide mathematics competition and educational outreach programs."
         ],
         images: [],
       },
@@ -138,7 +157,7 @@ const about = {
         description: (
           <>
             Science, Technology, Engineering, and Mathematics (STEM) Program <br />
-            <span style={{ fontSize: "10px" }}>
+            <span style={{ fontSize: "13px" }}>
             <i>Graduated SHS with High Honors (2023)</i> <br />
             <i>Graduated JHS with Honors (2021) </i></span>
           </>
