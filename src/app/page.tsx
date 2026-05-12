@@ -51,7 +51,7 @@ export default function Home() {
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl"> {home.subline} </Text>
           </RevealFx>
           
-          <Column fillWidth horizontal="center" gap="0"> {/* Gap set to 0 for tightest control */}
+          <Column fillWidth horizontal="center" gap="0">
             <RevealFx translateY="12" delay={0.4} horizontal="center">
               <Button id="about" data-border="rounded" href={about.path} variant="secondary" size="m" weight="default" arrowIcon>
                 <Row gap="8" vertical="center" paddingRight="4">
@@ -63,10 +63,10 @@ export default function Home() {
 
             <RevealFx 
               translateY="24" 
-              speed="medium" 
+              speed="fast" // Changed to fast for a snappier entry
               delay={0.5} 
               horizontal="center" 
-              paddingTop="20"      /* This controls the "half-inch" space below button */
+              paddingTop="20"
               paddingBottom="0"
             >
               <Media
@@ -77,14 +77,24 @@ export default function Home() {
                 border="neutral-alpha-weak"
                 sizes="(max-width: 900px) 100vw, 900px"
                 style={{ 
-                  maxWidth: "900px", /* Increased size */
+                  maxWidth: "900px",
                   width: "100%", 
                   objectFit: "cover",
-                  /* Static Glow Effect */
-                  filter: "drop-shadow(0 0 15px rgba(0, 255, 255, 0.4))", 
-                  marginBottom: "-20px" /* Pulls the next section closer */
+                  filter: "drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))", 
+                  marginBottom: "-20px",
+                  /* The Quick Float Animation */
+                  animation: "float 3s ease-in-out infinite",
+                  transition: "transform 0.5s ease"
                 }}
               />
+              {/* This injected style block creates the float effect globally for this page */}
+              <style>{`
+                @keyframes float {
+                  0% { transform: translateY(0px); }
+                  50% { transform: translateY(-10px); }
+                  100% { transform: translateY(0px); }
+                }
+              `}</style>
             </RevealFx>
           </Column>
         </Column>
