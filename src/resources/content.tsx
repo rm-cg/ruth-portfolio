@@ -116,7 +116,7 @@ const about = {
       {
         company: " ", // 👈 Invisible space! Prevents the org name from repeating
         timeframe: "",
-        role: "Deputy Secretary, Strategic Partnerships & Relations",
+        role: "Deputy Secretary, Strategic Partnerships & Relations Committee",
         achievements: [
           "Strategized a fundraising campaign for a community outreach program, driving the sale of 2,874 tickets and generating ₱28,740 in funds.",
           "Managed external communications and post-event follow-ups, ensuring the successful fulfillment of academic sponsorship packages."
