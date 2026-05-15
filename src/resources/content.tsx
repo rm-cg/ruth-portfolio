@@ -118,8 +118,8 @@ const about = {
         timeframe: "",
         role: "Deputy Secretary, Strategic Partnerships & Relations Committee",
         achievements: [
-          "Strategized a fundraising campaign for a community outreach program, driving the sale of 2,874 tickets and generating ₱28,740 in funds.",
-          "Managed external communications and post-event follow-ups, ensuring the successful fulfillment of academic sponsorship packages."
+          "Managed large-scale ticket sales data and consolidated financial tracking sheets to ensure budget transparency.",
+          "Handled external communications and post-event follow-ups, ensuring the successful fulfillment of academic sponsorship packages."
         ],
         images: [],
       },
@@ -183,7 +183,6 @@ const about = {
     skills: [
       {
         title: "Data Analysis & Visualization",
-        // FIXED: Converted descriptions to pure strings!
         description: "Applying descriptive statistics, correlation, hypothesis testing, and trend interpretation to extract actionable insights.",
         tags: [
           { name: "Statistics", icon: "chart" },
@@ -192,22 +191,23 @@ const about = {
         images: [],
       },
       {
-        title: "Programming & Database Tools",
-        description: "Handling, querying, and structuring data using industry-standard tools and programming languages.",
+        title: "Proficient Tools & Workflows",
+        description: "Handling structured data and streamlining organizational workflows using advanced spreadsheets and project management platforms.",
         tags: [
-          { name: "Python", icon: "python" },
-          { name: "SQL", icon: "database" },
           { name: "Excel", icon: "grid" },
+          { name: "LaTeX", icon: "document" },
+          { name: "Notion", icon: "book" },
+          { name: "Trello", icon: "layout" },
         ],
         images: [],
       },
       {
-        title: "Documentation & Workflow Efficiency",
-        description: "Streamlining organizational workflows with project management, structuring platforms, and AI tools.",
+        title: "Currently Upskilling: Programming & Databases",
+        description: "Actively building foundational programming skills for relational data management and advanced data querying.",
         tags: [
-          { name: "LaTeX", icon: "document" },
-          { name: "Notion", icon: "book" },
-          { name: "Trello", icon: "layout" },
+          { name: "Python", icon: "python" },
+          { name: "SQL", icon: "database" },
+          { name: "PowerBI", icon: "grid"}
         ],
         images: [],
       },

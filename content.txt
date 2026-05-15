@@ -126,7 +126,7 @@ const about: About = {
             Led program flow and segment pacing for over four departmental events with 300+ attendees, including research colloquiums and career forums.
           </>,
           <>
-            Facilitated a fundraising campaign that sold 2,874 tickets and generated ₱28,740 in funds.
+            Managed large-scale ticket sales data and consolidated financial tracking sheets to ensure budget transparency.
           </>
 
 
