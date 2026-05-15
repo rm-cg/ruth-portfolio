@@ -1,62 +1,47 @@
 ---
-title: "MS Excel: Beyond Formulas with Power Query"
-subtitle: "Transforming messy organizational records into automated data pipelines."
-summary: "How I transitioned from manual data cleaning to automated workflows using Excel's Power Query for organizational data."
+title: "MS Excel: Simple Data Analysis for Post-Event Evaluation Reports"
+subtitle: "Processing event feedback to build data-driven accomplishment reports for organizational leadership."
+summary: "A deep dive into my workflow for using Excel functions, data filtering, and Pivot Tables to analyze participant feedback."
 publishedAt: "2026-05-07"
-image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778085298/structured-references-excel_wbfhbt.png"
+image: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778816135/R.b7e8a84f2383fb95c3f2a4e131f1745c_exidco.jpg"
 tag: "Project Log"
 ---
 
-## The Reality of Messy Organizational Data
+## The Post-Activity Evaluation (PAE)
 
-As the Lead Secretariat for GDGoC - PLM and a Deputy Secretary for the PLM Mathematical Society, I handle a massive influx of data on a weekly basis. Whether it is tracking the 2,874 ticket sales from our fundraising campaign or processing post-event feedback forms from hundreds of attendees, raw data is rarely ever clean. 
+Every successful large-scale organizational event concludes with a rigorous Post-Activity Evaluation (PAE). A critical component of this process is the accomplishment report. This is not just a simple summary; it requires a detailed data analysis of the event's success and areas for improvement. 
 
-Names are typed in lowercase, email addresses have trailing spaces, and duplicate registrations are inevitable. For a long time, I relied on complex nested formulas to clean this data. But as my datasets grew, these formulas made the workbooks incredibly slow and prone to breaking. That is when I shifted my workflow to **Power Query**.
+My responsibility is to take the raw feedback data collected from the participants and translate it into a comprehensive, data-driven report for the executive team.
 
-## Enter Power Query: The Built-in ETL Tool
+## Step 1: Consolidating Attendance and Feedback
 
-Many people treat Excel simply as a digital ledger, but underneath its surface lies Power Query—a robust **Extract, Transform, Load (ETL)** engine. 
+Following an event, we deploy evaluation forms asking participants to assess their overall satisfaction, leave specific comments and suggestions, and note any problems they encountered during the sessions. 
 
-Instead of writing temporary formulas in adjacent columns, Power Query allows you to connect to a raw data source, apply a sequence of cleaning steps, and load a perfectly structured dataset into a Data Model or Pivot Table. The best part? It records every single step. When new event data comes in next month, I simply hit "Refresh," and the entire cleaning process happens automatically.
+Because we gather responses from hundreds of attendees, the raw data comes in completely unstructured. Before I can draft the final accomplishment report, I have to cross-reference this feedback with our official attendance and registration lists to ensure the data is valid, clean, and ready for analysis.
+
+## Step 2: Demographic Profiling using VLOOKUP and Filters
+
+To make sense of the unstructured responses, I rely on Excel's native data management tools. First, by using the `VLOOKUP` function, I can seamlessly match a participant's submitted email or name from the feedback form to our master registration database. This instantly pulls in crucial missing demographic details, such as their specific academic year and degree program.
+
+Once the dataset is unified, I heavily utilize **Data Filtering** and advanced sorting. Applying complex filters allows me to sift through hundreds of rows to instantly isolate specific segments of data. For example, I use filters to quickly remove incomplete survey responses or to drill down and view the specific feedback of a single department. This filtering process is vital for pinpointing the majority population attending our events, allowing us to accurately report which demographics benefited the most from our initiatives.
 
 <Feedback
     icon
     marginBottom="16"
     description={<>
-        Pro Tip: Always try to load your cleaned queries as a <InlineCode>Connection Only</InlineCode> and add them directly to the <Text as="span" weight="strong">Data Model</Text>. Loading massive tables directly into an Excel worksheet consumes unnecessary memory and slows down your file.
+        Pro Tip: Always apply <Text as="span" weight="strong">Data Validation</Text> rules on your front-end feedback forms. Ensuring that numerical scores and categorical responses are standardized before they even reach your spreadsheet saves hours of manual filtering later!
     </>}
 />
 
-## Automating the Cleanup with M-Code
+## Step 3: Pivot Tables for Satisfaction and Problem Analysis
 
-While Power Query has a fantastic user interface, its true power lies in its underlying functional language: **M-Code**. 
+With the demographics accurately filtered and mapped, the focus shifts to data analysis. I heavily rely on **Pivot Tables** to process both the quantitative and qualitative feedback simultaneously:
 
-When cross-referencing attendance sheets with our master registration database, I use M-Code to standardize text formats and filter out invalid entries before any analysis even begins. Here is a snippet of the backend code I use to automate our attendee profiling:
+1. **Quantitative Data:** I use descriptive statistics within the Pivot Tables to calculate the average satisfaction scores across different courses and year levels. 
+2. **Qualitative Data:** Pivot Tables help me systematically categorize the open-ended text. I group together the common problems participants encountered and synthesize their suggestions. This transforms pages of messy comments into clean, identifiable trends.
 
-<CodeBlock
-    marginBottom="16"
-    highlight="3-4"
-    codes={[
-      {
-        code:
-`let
-    Source = Excel.CurrentWorkbook(){[Name="Raw_Registrants"]}[Content],
-    CleanedText = Table.TransformColumns(Source,{{"Full_Name", Text.Proper, type text}}),
-    FilteredNulls = Table.SelectRows(CleanedText, each [Email_Address] <> null),
-    RemovedDuplicates = Table.Distinct(FilteredNulls, {"Email_Address"})
-in
-    RemovedDuplicates`,
-        language: "powerquery",
-        label: "attendee_preprocessing.pq"
-      }
-    ]}
-/>
+## Step 4: Finalizing the Accomplishment Report
 
-### Breaking Down the Logic:
-1. **`Text.Proper`**: Automatically scans the `Full_Name` column and converts all text to Title Case (e.g., transforming "juan dela cruz" to "Juan Dela Cruz"), ensuring our certificate generation is perfectly formatted.
-2. **`FilteredNulls`**: Instantly removes any row where the `Email_Address` is missing, preventing bounce-backs during our email campaigns.
-3. **`Table.Distinct`**: Scans the dataset and removes duplicate submissions based on the email address, ensuring our attendance metrics are entirely accurate.
+The ultimate goal of this rigorous data structuring is to support executive decision-making. Once the Excel data analysis is complete, I synthesize the findings into clear, formatted lists and tables directly inside a collaborative document. 
 
-## The Analyst's Mindset
-
-By mastering Power Query, I stopped spending hours doing manual data entry and started acting like a true Data Analyst. I now spend my time interpreting the results, evaluating event success, and building dynamic dashboards. Learning how to structure data pipelines in Excel has also given me a massive advantage as I transition into handling larger databases with SQL and Python.
+This clean, comprehensive report is then forwarded to the Chief Operations Officer (COO) or the core executive team for a high-level evaluation. By leveraging Excel's core lookup, filtering, and analytical tools, I ensure that our organization's leadership submits accurate, highly professional reports that drive the success of our future events.
