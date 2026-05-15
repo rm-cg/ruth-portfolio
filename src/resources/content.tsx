@@ -207,7 +207,7 @@ const about = {
         tags: [
           { name: "Python", icon: "python" },
           { name: "SQL", icon: "database" },
-          { name: "PowerBI", icon: "grid"}
+          { name: "PowerBI", icon: "eye"}
         ],
         images: [],
       },
