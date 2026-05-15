@@ -6,7 +6,7 @@ const person = {
   // FIXED: Changed template literals (backticks) to standard quotes!
   name: "Ruth Margareth Guinto", 
   role: "Aspiring Data Analyst & Mathematics Student",
-  avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041993/2x2_ID_PIC_pmged6.jpg",
+  avatar: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778828148/1000012495_a7jvju.jpg",
   email: "guinto36ruth@gmail.com",
   location: "Asia/Manila",
   languages: ["English", "Tagalog"],
