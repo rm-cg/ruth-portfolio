@@ -50,10 +50,10 @@ const home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">CNNs & Data Modeling</strong>{" "}
+        <strong className="ml-4">CNNs & Data Analysis</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Current Focus
+          Current Interests
         </Text>
       </Row>
     ),
