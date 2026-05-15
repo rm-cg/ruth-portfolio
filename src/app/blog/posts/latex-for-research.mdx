@@ -46,32 +46,29 @@ You do not have to worry about the spacing getting ruined when you add a new lin
 
 ## Complex Environments
 
-You can use custom environments in `.tex` files to format high-level statistical tests. For example, when I worked on the data analysis for my quantitative research on flood management, writing out the One-Way ANOVA formulas was incredibly simple using the `equation` environment.
+You can use custom environments in `.tex` files to format high-level statistical tests. For example, when I was compiling my reviewer for my recent Statistics midterms, writing out complex formulas like the Two-Sample Z-Test and Confidence Intervals was incredibly simple using the `equation` environment.
 
 <CodeBlock
     marginBottom="16"
-    highlight="2"
+    highlight="2, 6"
     codes={[
       {
         code:
 `\\begin{equation}
-    F = \\frac{MST}{MSE} = \\frac{\\text{Variance between treatments}}{\\text{Variance within treatments}}
+    Z_{comp} = \\frac{(\\bar{x}_1 - \\bar{x}_2) - (\\mu_1 - \\mu_2)}{\\sqrt{\\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}}
 \\end{equation}
 
-\\begin{bmatrix}
-    x_{11} & x_{12} \\\\
-    x_{21} & x_{22}
-\\end{bmatrix}`,
+\\begin{equation}
+    C.I. = \\hat{p} \\pm Z_{critical} \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}
+\\end{equation}`,
         language: "latex",
-        label: "statistical_analysis.tex"
+        label: "statistics_reviewer.tex"
       }
     ]}
 />
 
-As you can see, the `equation` and `bmatrix` components are natively available for use when you import the `amsmath` package. You can add more complex logic by simply passing different variables to the structured objects.
+As you can see, the `equation` environment makes handling messy structures like nested fractions and square roots natively available for use when you import the `amsmath` package. You can add more complex mathematical logic by simply passing different variables to the structured objects without worrying about breaking the formatting.
 
 ## Professional Output & Collaboration
 
 While formatting heavily relies on code, the final compilation of a LaTeX document results in a flawless, structured PDF that is highly respected in the fields of Data Science, Mathematics, and academic research. 
-
-Are you working on a data-heavy research paper, or do you need help structuring a complex mathematical document? I would love to collaborate! Feel free to reach out and [connect with me on LinkedIn](https://www.linkedin.com/in/ruth-guinto), and I can even share some of my favorite LaTeX templates with you!
