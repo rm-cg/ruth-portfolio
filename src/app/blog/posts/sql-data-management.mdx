@@ -8,16 +8,18 @@ tag: "Blog"
 
 ## The Power of SQL in Data Analytics
 
-As an aspiring Data Analyst, my ability to efficiently extract and structure data is crucial. While I frequently use Excel for immediate tracking (like managing financial records for PLM MathSoc), **SQL (Structured Query Language)** is my go-to tool for heavy relational data management, advanced filtering, and complex querying.
+As an aspiring Data Analyst, my ability to efficiently extract and structure data is a foundational skill. While I frequently use Excel for immediate, small-scale tracking and dashboarding, **SQL (Structured Query Language)** is my primary tool for heavy relational data management, advanced filtering, and complex querying.
 
-Here is an example of how I approach querying datasets to extract meaningful insights:
+When exploring massive datasets such as public academic research data or demographic surveys, use precise queries to extract meaningful insights without the performance limitations of standard spreadsheet software. 
+
+Here is an example of how I approach querying targeted subsets of data:
 
 <CodeBlock
     marginBottom="16"
     codes={[
   {
     code:
-`-- Extracting top performing student records during the distance learning setup
+`-- Extracting top performing student records for targeted demographic analysis
 SELECT 
     student_id, 
     general_average, 
@@ -30,13 +32,15 @@ WHERE
 ORDER BY 
     general_average DESC;`, 
     language: "sql",
-    label: "queries/student_performance.sql"
+    label: "queries/academic_performance.sql"
   }
 ]} />
 
 ## Advanced Filtering and Structuring
 
-When dealing with organizational records, I rely on SQL's relational capabilities to join tables and summarize data efficiently. For example, if I were tracking the PLM MathSoc Building Blocks fundraising campaign that successfully sold 2,874 tickets, the query would look like this:
+The true power of SQL lies in its relational capabilities. When dealing with complex, multi-table databases, I rely on `JOIN` clauses and aggregate functions to summarize fragmented data efficiently. 
+
+For example, if I am working with a relational database containing separate tables for transactions and product categories, a structural query to analyze overall performance would look like this:
 
 <CodeBlock
     codeHeight={24}
@@ -44,22 +48,24 @@ When dealing with organizational records, I rely on SQL's relational capabilitie
     codes={[
   {
     code:
-`-- Joining financial tracking tables for organizational transparency
+`-- Aggregating total revenue and units sold per product category
 SELECT 
-    e.event_name,
-    SUM(t.ticket_price) AS total_funds_raised,
-    COUNT(t.ticket_id) AS tickets_sold
+    c.category_name,
+    SUM(s.quantity * s.unit_price) AS total_revenue,
+    SUM(s.quantity) AS total_units_sold
 FROM 
-    events e
+    sales s
 JOIN 
-    ticket_sales t ON e.event_id = t.event_id
-WHERE 
-    e.event_name = 'Building Blocks Fundraising'
+    products p ON s.product_id = p.product_id
+JOIN 
+    categories c ON p.category_id = c.category_id
 GROUP BY 
-    e.event_name;`, 
+    c.category_name
+ORDER BY 
+    total_revenue DESC;`, 
     language: "sql",
-    label: "queries/fundraising_tracking.sql"
+    label: "queries/category_aggregation.sql"
   }
 ]} />
 
-This structural approach allows me to guarantee data accuracy and provide transparent, real-time insights for organizational operations.
+By writing scalable and structured SQL scripts like this, I can connect multiple data points, guarantee accuracy, and deliver transparent, real-time insights for data-driven decision-making.
