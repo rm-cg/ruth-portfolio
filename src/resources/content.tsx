@@ -351,6 +351,12 @@ const gallery = {
       orientation: "horizontal",
     }
    
+{
+      src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1779246341/1000012665_qa6lyk.jpg",
+      alt: "KadaKareer Participant",
+      orientation: "horizontal",
+    },
+
   ],
 };
 

@@ -17,7 +17,7 @@ export async function generateMetadata() {
 }
 
 // ============================================================================
-// 📸 THE MAGIC ARRAYS (PRE-FILLED WITH YOUR LINKS)
+// 📸 THE MAGIC ARRAYS (PRE-FILLED WITH LINKS)
 // ============================================================================
 
 const gdgPhotos = [
