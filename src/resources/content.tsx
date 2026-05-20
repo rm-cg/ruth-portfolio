@@ -349,7 +349,7 @@ const gallery = {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1778041724/COP__COMATHRADERY_PARTICIPANT_hdezr4.jpg",
       alt: "CoMATHradery Participant",
       orientation: "horizontal",
-    }
+    },
    
 {
       src: "https://res.cloudinary.com/djq6yl8sw/image/upload/v1779246341/1000012665_qa6lyk.jpg",
